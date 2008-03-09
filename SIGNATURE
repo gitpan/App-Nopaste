@@ -1,0 +1,48 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.55.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 f0d2013ecc6b0dfb96b95253994c77858bd7475e Changes
+SHA1 b1ec9bc3833c58015186fbcf935c32ecf67a04dd MANIFEST
+SHA1 4aaacbf8545c28612a379a2f5f084a2a40770177 META.yml
+SHA1 4f6eb6a2108ee1af10525bde5f9191f745166db3 Makefile.PL
+SHA1 a5764478a8980a20796dc7af333d3f7592abd582 bin/nopaste
+SHA1 603bb9de29fb8cba7f13409c546750972eff645d inc/Module/AutoInstall.pm
+SHA1 7e2cfa1b9efe0d502ee57717649c90ba4bd28ba9 inc/Module/Install.pm
+SHA1 182a0df45b65151afdc2be0b7246a2d02d0f0567 inc/Module/Install/AutoInstall.pm
+SHA1 6e1392d80a0f239eecd5664f7f21f922cedb9329 inc/Module/Install/Base.pm
+SHA1 f69417fe831d9cc22a78f00a617afadceade4d81 inc/Module/Install/Can.pm
+SHA1 c61d02895330310048bf388881b5e2e064031561 inc/Module/Install/Fetch.pm
+SHA1 4933b00c3a646da8d223c6957f94552bbd62f8c6 inc/Module/Install/Include.pm
+SHA1 54fcbed19232ec959bb17cfb4410599afc7f0779 inc/Module/Install/Makefile.pm
+SHA1 7d3be9b158e37b2b2c22084740099955623b1d56 inc/Module/Install/Metadata.pm
+SHA1 92b109a1c78889f8d03eb2b2a1e0c5ea73b7ae72 inc/Module/Install/Scripts.pm
+SHA1 0a8b66180229ba2f9deaea1fedd0aacf7a7ace6b inc/Module/Install/Win32.pm
+SHA1 d3352eb33fe43a5f3ead513f645224fe34d73bc9 inc/Module/Install/WriteAll.pm
+SHA1 7e1b4f89f8f9b8920629096bc8607487936f2c32 lib/App/Nopaste.pm
+SHA1 fe7a0b6749cfd24a2200d6fcfeb6ea8f067e6577 lib/App/Nopaste/Service.pm
+SHA1 d5f0febfcb35661be05b0c460af393d41a723e1c lib/App/Nopaste/Service/Husk.pm
+SHA1 d688bf854d190945fa70a600eb572720f8c8d2d4 lib/App/Nopaste/Service/PastebinCom.pm
+SHA1 be6f805d696b1cb76fa94e11645bd2e92a1d4f29 lib/App/Nopaste/Service/Rafb.pm
+SHA1 d221a0c44696635a48049747113db83934b3c268 lib/App/Nopaste/Service/Shadowcat.pm
+SHA1 ea6028ef9551c778c0d1350312af19e7721c145d lib/App/Nopaste/Service/Snitch.pm
+SHA1 9dcfb075964c9d470b1669a175c7b4628a8382cc t/000-load.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.7 (Darwin)
+
+iD4DBQFH0+39sxfQtHhyRPoRAtOgAKCLMkU/gId+uPIAh37n4NAFHNpJUgCWMVcZ
++neC43wIzWRY2hODCrSD5Q==
+=zKLl
+-----END PGP SIGNATURE-----

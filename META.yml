@@ -18,6 +18,6 @@ no_index:
 requires: 
   Module::Pluggable: 0
   WWW::Mechanize: 0
-  WWW::PastebinCom::Create: 0
-  WWW::Rafb::Create: 0
-version: 0.01
+  WWW::Pastebin::PastebinCom::Create: 0
+  WWW::Pastebin::RafbNet::Create: 0
+version: 0.02

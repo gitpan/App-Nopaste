@@ -15,9 +15,10 @@ no_index:
   directory: 
     - inc
     - t
+recommends: 
+  WWW::Pastebin::PastebinCom::Create: 0
+  WWW::Pastebin::RafbNet::Create: 0
 requires: 
   Module::Pluggable: 0
   WWW::Mechanize: 0
-  WWW::Pastebin::PastebinCom::Create: 0
-  WWW::Pastebin::RafbNet::Create: 0
-version: 0.02
+version: 0.03

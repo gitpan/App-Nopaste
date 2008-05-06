@@ -11,11 +11,11 @@ requires       'Module::Pluggable';
 features(
     'nopaste to pastebin.com' => [
         -default => 1,
-        requires('WWW::Pastebin::PastebinCom::Create'),
+        recommends('WWW::Pastebin::PastebinCom::Create'),
     ],
     'nopaste to rafb.net' => [
         -default => 1,
-        requires('WWW::Pastebin::RafbNet::Create'),
+        recommends('WWW::Pastebin::RafbNet::Create'),
     ],
 );
 
@@ -23,6 +23,5 @@ build_requires 'Test::More';
 
 install_script 'bin/nopaste';
 
-auto_install;
 WriteAll;
 

@@ -4,6 +4,8 @@ use strict;
 use warnings;
 use WWW::Mechanize;
 
+sub available { 1 }
+
 # this wrapper is so we can canonicalize arguments, especially "lang"
 sub nopaste {
     my $self = shift;
@@ -28,7 +30,10 @@ sub get {
     my $self = shift;
     my $mech = shift;
 
-    $mech->get($self->uri);
+    my $res = $mech->get($self->uri);
+    die "Unable to fetch ".$self->uri.": " . $res->status_line
+        unless $res->is_success;
+    return $res;
 }
 
 sub fill_form {
@@ -36,8 +41,10 @@ sub fill_form {
     my $mech = shift;
     my %args = @_;
 
+    $mech->form_number(1);
+    $args{chan} = $self->canonicalize_chan($mech, $args{chan});
+
     $mech->submit_form(
-        form_number   => 1,
         fields        => {
             paste => $args{text},
             do { $args{chan} ? (channel => $args{chan}) : () },
@@ -45,6 +52,30 @@ sub fill_form {
             do { $args{nick} ? (nick    => $args{nick}) : () },
         },
     );
+}
+
+sub canonicalize_chan {
+    my $self = shift;
+    my $mech = shift;
+    my $chan = shift;
+
+    return $chan if !$chan;
+
+    my @chans = grep { length }
+                $mech->current_form->find_input('channel')->possible_values;
+    my %is_valid = map { $_ => 1 } @chans;
+
+    return $chan if $is_valid{$chan};
+
+    my $orig = $chan;
+    $chan =~ s/^\#//;
+    return $chan if $is_valid{$chan};
+
+    $chan = "#$chan";
+    return $chan if $is_valid{$chan};
+
+    warn "Invalid channel '$orig'. Valid values are: " . join(', ', @chans);
+    return $orig;
 }
 
 sub return {

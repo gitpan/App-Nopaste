@@ -21,10 +21,10 @@ sub nopaste {
 
     $args{services} = defined($ENV{NOPASTE_SERVICES})
                    && [split ' ', $ENV{NOPASTE_SERVICES}]
-                        if !exists($args{services});
+                        if !defined($args{services});
 
     $args{nick} = $ENV{NOPASTE_NICK} || $ENV{USER}
-        if !exists($args{nick});
+        if !defined($args{nick});
 
 
     unless (ref($args{services}) eq 'ARRAY' && @{$args{services}}) {
@@ -45,8 +45,14 @@ sub nopaste {
             unless $service =~ /^App::Nopaste::Service/;
 
         my @ret = eval {
+
+            local $SIG{__WARN__} = sub {
+                $args{warn_handler}->($_[0], $service);
+            } if $args{warn_handler};
+
             (my $file = "$service.pm") =~ s{::}{/}g;
             require $file;
+            next unless $service->available;
             $service->nopaste(%args);
         };
 
@@ -60,7 +66,7 @@ sub nopaste {
     }
     # }}}
 
-    return undef;
+    Carp::croak "No available App::Nopaste::Service modules found";
 }
 
 =head1 NAME
@@ -69,11 +75,11 @@ App::Nopaste - easy access to any pastebin
 
 =head1 VERSION
 
-Version 0.03 released 06 May 08
+Version 0.04 released 11 Jun 08
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =head1 SYNOPSIS
 
@@ -107,15 +113,7 @@ L<App::Nopaste::Service::Foo> module and anyone can begin using it.
 
 =head2 CLI
 
-The command line interface is a currently razor thin wrapper around
-C<App::Nopaste>.
-
-In the usual Perl manner, you can pass text in via STDIN or through named files
-as arguments. Multiple files will be concatenated into one paste (this may
-change in the future).
-
-It prints on STDOUT the paste URI - if one was available. It warns on STDERR
-any errors that occur.
+See the documentation in L<App::Nopaste::Command>.
 
 =head2 C<nopaste>
 
@@ -134,6 +132,11 @@ any errors that occur.
             warn "$service: $error";
         },
 
+        warn_handler => sub {
+            my ($warning, $service) = @_;
+            warn "$service: $warning";
+        },
+
         # you may specify the services to use - but you don't have to
         services => ["Rafb", "Husk"],
     );
@@ -144,6 +147,9 @@ The C<nopaste> function will return the URL of the paste on
 success, or C<undef> on failure.
 
 For each failure, the C<error_handler> argument is invoked with the error
+message and the service that issued it.
+
+For each warning, the C<warn_handler> argument is invoked with the warning
 message and the service that issued it.
 
 =head1 SEE ALSO

@@ -14,27 +14,28 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 6dfe8115681fda6cba9e025226bd0ff27b882826 Changes
-SHA1 0d6ea6d0aa483f014703d0ff3f2cad2ba2d3d5a5 MANIFEST
+SHA1 9f7d3294b9fc6f0a64f063535ebdd1f78ce10ac2 Changes
+SHA1 88244b56e8202986ab3e8f142d68f7e3226019b2 MANIFEST
 SHA1 6223176e070d267df8f30ab1d02cb7e4d1c1e4e9 META.yml
-SHA1 4b7aeab95e011ad7dedb2bddccec76836e6ed5f0 Makefile.PL
+SHA1 cd1dc5ed9b850c8439abf0d69ee98e38eac10a82 Makefile.PL
 SHA1 8b2962afe77b0257eb91b0ab06f82969a3134fe7 bin/nopaste
 SHA1 603bb9de29fb8cba7f13409c546750972eff645d inc/Module/AutoInstall.pm
-SHA1 f0577f8f88a6703e9bca2d10196cfd293f3d6f2f inc/Module/Install.pm
-SHA1 b2a2c9b6cb4b1bcd119825acc707f45946d8b126 inc/Module/Install/AutoInstall.pm
-SHA1 5d574849849860b8cf06035cc6f1a306c66cb326 inc/Module/Install/Base.pm
-SHA1 c30f50bc2a1542dff17f84a54d9316f3c3c6299e inc/Module/Install/Can.pm
-SHA1 9b618efcd783f6ed4bab84fa22b31886fcc38d57 inc/Module/Install/Fetch.pm
-SHA1 808d4b2d764185a34c89e675bb4eaad18c075b14 inc/Module/Install/Include.pm
-SHA1 cd14c8de2a67b0f14df9bc20c27f3edabd359d1b inc/Module/Install/Makefile.pm
-SHA1 a2162aec678d21988fce47ab805cf01773196292 inc/Module/Install/Metadata.pm
-SHA1 4ae5d56e11e640bd9520634dde6d563926f6d98a inc/Module/Install/Win32.pm
-SHA1 587cc94b52b640fe2d4972253b6369aa951e2210 inc/Module/Install/WriteAll.pm
-SHA1 47d31c6429a50c00453ecea190f2b51eba0ce60f lib/App/Nopaste.pm
+SHA1 8b836389e4bc170eb8d19b7296b2f4978ac36136 inc/Module/Install.pm
+SHA1 182a0df45b65151afdc2be0b7246a2d02d0f0567 inc/Module/Install/AutoInstall.pm
+SHA1 85b32a1d5f215d99f411c3dd6113b537fcd5c57d inc/Module/Install/Base.pm
+SHA1 fde745e180861c7c0ba3ee5a767cafdbdb1d3ebd inc/Module/Install/Can.pm
+SHA1 e259400ceb54c34def9c994f52d7091108ce7ffc inc/Module/Install/Fetch.pm
+SHA1 ecd277fcac91f6901ad652d5d58b515d0412b306 inc/Module/Install/Include.pm
+SHA1 da42b522e5a7ffbae0ceec900f3635ad9990c565 inc/Module/Install/Makefile.pm
+SHA1 ba005818ee9f97146bfa4e14e53c684e9e446902 inc/Module/Install/Metadata.pm
+SHA1 73ee3646edc50965fe695bddb936ed3f5070fe78 inc/Module/Install/Scripts.pm
+SHA1 85e6b1cf5b7ca81bfb469a99389fa947d4b8a08e inc/Module/Install/Win32.pm
+SHA1 d32dff9f0d2f02023ca6d79a48d62fd855916351 inc/Module/Install/WriteAll.pm
+SHA1 56b5243420ad14399088533a1ece941cbc523c36 lib/App/Nopaste.pm
 SHA1 895b2d1739f44e737659080b568184e46d6ad8b1 lib/App/Nopaste/Command.pm
-SHA1 b5a4c171ab2c2f520206d29fb8d0652e1bb74cee lib/App/Nopaste/Service.pm
+SHA1 3a04c4e5f5494572d0ee144c19d217399ef74965 lib/App/Nopaste/Service.pm
 SHA1 d5f0febfcb35661be05b0c460af393d41a723e1c lib/App/Nopaste/Service/Husk.pm
-SHA1 70496fc2286f8dd5b8751da524480e1015af932e lib/App/Nopaste/Service/Mathbin.pm
+SHA1 54dce0fbd79d1d683e087b28b6339a3f588d5d99 lib/App/Nopaste/Service/Mathbin.pm
 SHA1 e1e93b9af11e4f5fd46baa8ca336983b09564898 lib/App/Nopaste/Service/PastebinCom.pm
 SHA1 6599ec41151c4b47d4fcfdafef5cb158c1e7899f lib/App/Nopaste/Service/Rafb.pm
 SHA1 d221a0c44696635a48049747113db83934b3c268 lib/App/Nopaste/Service/Shadowcat.pm
@@ -43,7 +44,7 @@ SHA1 278228908f7bec7040f6d3c6ca40ce03703942b6 t/000-load.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.7 (Darwin)
 
-iD8DBQFIT14BsxfQtHhyRPoRAivpAJ9IsWP9Rjts4lhflY+y2djNaFXCdwCgjZMI
-TwJppfFPI6BoqQ4zXKEaTBg=
-=yuUH
+iD8DBQFIuEj6sxfQtHhyRPoRAjo5AJ9KeNYhLAqZ9hgGxlkvmZi/RlAkNgCaA5dR
+MOns5IXqnsjM2j0D+ly1hZs=
+=JWz3
 -----END PGP SIGNATURE-----

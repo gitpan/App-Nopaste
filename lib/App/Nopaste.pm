@@ -7,6 +7,8 @@ use Module::Pluggable search_path => 'App::Nopaste::Service';
 use base 'Exporter';
 our @EXPORT_OK = 'nopaste';
 
+our $VERSION = '0.05';
+
 sub nopaste {
     # process arguments {{{
     # allow "nopaste($text)"
@@ -27,7 +29,9 @@ sub nopaste {
         if !defined($args{nick});
 
 
+    my $using_default = 0;
     unless (ref($args{services}) eq 'ARRAY' && @{$args{services}}) {
+        $using_default = 1;
         $args{services} = [ $self->plugins ];
     }
 
@@ -53,6 +57,7 @@ sub nopaste {
             (my $file = "$service.pm") =~ s{::}{/}g;
             require $file;
             next unless $service->available;
+            next if $using_default && $service->forbid_in_default;
             $service->nopaste(%args);
         };
 
@@ -69,17 +74,13 @@ sub nopaste {
     Carp::croak "No available App::Nopaste::Service modules found";
 }
 
+1;
+
+__END__
+
 =head1 NAME
 
 App::Nopaste - easy access to any pastebin
-
-=head1 VERSION
-
-Version 0.04 released 11 Jun 08
-
-=cut
-
-our $VERSION = '0.04';
 
 =head1 SYNOPSIS
 
@@ -174,6 +175,4 @@ This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
 =cut
-
-1;
 

@@ -14,7 +14,7 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 9f7d3294b9fc6f0a64f063535ebdd1f78ce10ac2 Changes
+SHA1 6388144182ac0a2cdb724f6339e61b9b03edc2b4 Changes
 SHA1 88244b56e8202986ab3e8f142d68f7e3226019b2 MANIFEST
 SHA1 6223176e070d267df8f30ab1d02cb7e4d1c1e4e9 META.yml
 SHA1 cd1dc5ed9b850c8439abf0d69ee98e38eac10a82 Makefile.PL
@@ -31,7 +31,7 @@ SHA1 ba005818ee9f97146bfa4e14e53c684e9e446902 inc/Module/Install/Metadata.pm
 SHA1 73ee3646edc50965fe695bddb936ed3f5070fe78 inc/Module/Install/Scripts.pm
 SHA1 85e6b1cf5b7ca81bfb469a99389fa947d4b8a08e inc/Module/Install/Win32.pm
 SHA1 d32dff9f0d2f02023ca6d79a48d62fd855916351 inc/Module/Install/WriteAll.pm
-SHA1 56b5243420ad14399088533a1ece941cbc523c36 lib/App/Nopaste.pm
+SHA1 5b0a1ea15df036cd6e000824a66d9108c4be8383 lib/App/Nopaste.pm
 SHA1 895b2d1739f44e737659080b568184e46d6ad8b1 lib/App/Nopaste/Command.pm
 SHA1 3a04c4e5f5494572d0ee144c19d217399ef74965 lib/App/Nopaste/Service.pm
 SHA1 d5f0febfcb35661be05b0c460af393d41a723e1c lib/App/Nopaste/Service/Husk.pm
@@ -44,7 +44,7 @@ SHA1 278228908f7bec7040f6d3c6ca40ce03703942b6 t/000-load.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.7 (Darwin)
 
-iD8DBQFIuEj6sxfQtHhyRPoRAjo5AJ9KeNYhLAqZ9hgGxlkvmZi/RlAkNgCaA5dR
-MOns5IXqnsjM2j0D+ly1hZs=
-=JWz3
+iD8DBQFJN0WhsxfQtHhyRPoRAlQrAJ48uSRk3ZL72+mNr8vRotSNO4V/8gCfSgoL
+ZUkSa6auHGJYAdWc/E505lY=
+=o2ay
 -----END PGP SIGNATURE-----

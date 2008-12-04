@@ -7,7 +7,7 @@ use Module::Pluggable search_path => 'App::Nopaste::Service';
 use base 'Exporter';
 our @EXPORT_OK = 'nopaste';
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 sub nopaste {
     # process arguments {{{
@@ -48,6 +48,7 @@ sub nopaste {
         $service = "App::Nopaste::Service::$service"
             unless $service =~ /^App::Nopaste::Service/;
 
+        no warnings 'exiting';
         my @ret = eval {
 
             local $SIG{__WARN__} = sub {

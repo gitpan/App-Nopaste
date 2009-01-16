@@ -15,9 +15,11 @@ inc/Module/Install/WriteAll.pm
 lib/App/Nopaste.pm
 lib/App/Nopaste/Command.pm
 lib/App/Nopaste/Service.pm
+lib/App/Nopaste/Service/Gist.pm
 lib/App/Nopaste/Service/Husk.pm
 lib/App/Nopaste/Service/Mathbin.pm
 lib/App/Nopaste/Service/PastebinCom.pm
+lib/App/Nopaste/Service/Pastie.pm
 lib/App/Nopaste/Service/Rafb.pm
 lib/App/Nopaste/Service/Shadowcat.pm
 lib/App/Nopaste/Service/Snitch.pm

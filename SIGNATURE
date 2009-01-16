@@ -14,8 +14,8 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 6388144182ac0a2cdb724f6339e61b9b03edc2b4 Changes
-SHA1 88244b56e8202986ab3e8f142d68f7e3226019b2 MANIFEST
+SHA1 7ba04f5c19a89329f14fad27994bb2dba23e9c75 Changes
+SHA1 f033bd0d2c96e42049c5cc5fc09c7986c675f202 MANIFEST
 SHA1 6223176e070d267df8f30ab1d02cb7e4d1c1e4e9 META.yml
 SHA1 cd1dc5ed9b850c8439abf0d69ee98e38eac10a82 Makefile.PL
 SHA1 8b2962afe77b0257eb91b0ab06f82969a3134fe7 bin/nopaste
@@ -31,20 +31,22 @@ SHA1 ba005818ee9f97146bfa4e14e53c684e9e446902 inc/Module/Install/Metadata.pm
 SHA1 73ee3646edc50965fe695bddb936ed3f5070fe78 inc/Module/Install/Scripts.pm
 SHA1 85e6b1cf5b7ca81bfb469a99389fa947d4b8a08e inc/Module/Install/Win32.pm
 SHA1 d32dff9f0d2f02023ca6d79a48d62fd855916351 inc/Module/Install/WriteAll.pm
-SHA1 5b0a1ea15df036cd6e000824a66d9108c4be8383 lib/App/Nopaste.pm
-SHA1 895b2d1739f44e737659080b568184e46d6ad8b1 lib/App/Nopaste/Command.pm
-SHA1 3a04c4e5f5494572d0ee144c19d217399ef74965 lib/App/Nopaste/Service.pm
-SHA1 d5f0febfcb35661be05b0c460af393d41a723e1c lib/App/Nopaste/Service/Husk.pm
-SHA1 54dce0fbd79d1d683e087b28b6339a3f588d5d99 lib/App/Nopaste/Service/Mathbin.pm
-SHA1 e1e93b9af11e4f5fd46baa8ca336983b09564898 lib/App/Nopaste/Service/PastebinCom.pm
-SHA1 6599ec41151c4b47d4fcfdafef5cb158c1e7899f lib/App/Nopaste/Service/Rafb.pm
-SHA1 d221a0c44696635a48049747113db83934b3c268 lib/App/Nopaste/Service/Shadowcat.pm
-SHA1 ea6028ef9551c778c0d1350312af19e7721c145d lib/App/Nopaste/Service/Snitch.pm
+SHA1 a445ea02c75ea9560ed7cc82f1510187c2ae73a2 lib/App/Nopaste.pm
+SHA1 635ed95b0bb04688efb0b0209facff93a7429263 lib/App/Nopaste/Command.pm
+SHA1 ddfeaac98b31e7a0c71671ffe6ba0947a1ee2921 lib/App/Nopaste/Service.pm
+SHA1 dd72712c942fd275bdba9d8f5c31caada4bc6830 lib/App/Nopaste/Service/Gist.pm
+SHA1 c8381b8ac808cf601b314e45c5900152e66c8792 lib/App/Nopaste/Service/Husk.pm
+SHA1 f8520996293ebe582a2b4221e9c2a3f8cebfcd2a lib/App/Nopaste/Service/Mathbin.pm
+SHA1 9011a01245f4505b0aec13255360fcabe75f4e99 lib/App/Nopaste/Service/PastebinCom.pm
+SHA1 86526b9a385af14b81a5fd7d4f7adc27bc356084 lib/App/Nopaste/Service/Pastie.pm
+SHA1 7ed049d2b8ce26a846d9e8fe9bbfcc16053e12da lib/App/Nopaste/Service/Rafb.pm
+SHA1 ecb97e3486c427c6049bcc5411ae2c47730de49a lib/App/Nopaste/Service/Shadowcat.pm
+SHA1 4ec63b87c7dc83d8d102daeac99e56a67bcbb734 lib/App/Nopaste/Service/Snitch.pm
 SHA1 278228908f7bec7040f6d3c6ca40ce03703942b6 t/000-load.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.7 (Darwin)
 
-iD8DBQFJN0WhsxfQtHhyRPoRAlQrAJ48uSRk3ZL72+mNr8vRotSNO4V/8gCfSgoL
-ZUkSa6auHGJYAdWc/E505lY=
-=o2ay
+iD8DBQFJcPcrsxfQtHhyRPoRAoJzAJsEWXs/19LlJxNHZcCsB4CvsxON5wCeMe3x
+Unbv634BEbhs8d5eKpEnr8A=
+=aXnJ
 -----END PGP SIGNATURE-----

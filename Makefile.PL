@@ -4,11 +4,12 @@ use inc::Module::Install;
 # Define metadata
 name           'App-Nopaste';
 all_from       'lib/App/Nopaste.pm';
+githubmeta;
 
 requires       'WWW::Mechanize';
 requires       'Module::Pluggable';
-requires       'Moose' => '0.50';
-requires       'MooseX::Getopt' => '0.13';
+requires       'Moose' => '0.74';
+requires       'MooseX::Getopt' => '0.17';
 
 features(
     'pastebin.com support' => [
@@ -25,8 +26,6 @@ features(
         'Config::INI::Reader' => '0.00',
     ],
 );
-
-build_requires 'Test::More';
 
 install_script 'bin/nopaste';
 

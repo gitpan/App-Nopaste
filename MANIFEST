@@ -1,3 +1,4 @@
+App-Nopaste-0.13.tar.gz
 bin/nopaste
 Changes
 inc/Module/AutoInstall.pm
@@ -16,6 +17,7 @@ inc/Module/Install/WriteAll.pm
 lib/App/Nopaste.pm
 lib/App/Nopaste/Command.pm
 lib/App/Nopaste/Service.pm
+lib/App/Nopaste/Service/Debian.pm
 lib/App/Nopaste/Service/Gist.pm
 lib/App/Nopaste/Service/Husk.pm
 lib/App/Nopaste/Service/Mathbin.pm

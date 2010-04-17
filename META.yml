@@ -7,7 +7,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.91'
+generated_by: 'Module::Install version 0.95'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -22,6 +22,9 @@ requires:
   Moose: 0.74
   MooseX::Getopt: 0.17
   WWW::Mechanize: 0
+  perl: 5.8.3
 resources:
+  homepage: http://github.com/sartak/app-nopaste/tree
   license: http://dev.perl.org/licenses/
-version: 0.19
+  repository: git://github.com/sartak/app-nopaste.git
+version: 0.20

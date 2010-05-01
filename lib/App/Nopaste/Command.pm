@@ -45,6 +45,14 @@ has services => (
     documentation => "The nopaste services to try, in order. You may also specify this in the env var NOPASTE_SERVICES.",
 );
 
+has list_services => (
+    traits        => ['Getopt'],
+    is            => 'rw',
+    isa           => 'Bool',
+    cmd_aliases   => ['list', 'L'],
+    documentation => "List available nopaste services",
+);
+
 has copy => (
     traits        => ['Getopt'],
     is            => 'rw',
@@ -69,8 +77,24 @@ has quiet => (
     documentation => "If specified, do not warn or complain about broken services.",
 );
 
+has private => (
+    traits        => ['Getopt'],
+    is            => 'rw',
+    isa           => 'Bool',
+    documentation => "If specified, paste privately to services where possible.",
+);
+
 sub run {
     my $self = shift;
+
+    if ($self->list_services) {
+        for (sort App::Nopaste->plugins) {
+            s/App::Nopaste::Service::(\w+)$/$1/;
+            print $_, "\n";
+        }
+        exit 0;
+    }
+
     my $text = $self->read_text;
 
     my %args = (
@@ -80,6 +104,7 @@ sub run {
         lang     => $self->lang,
         chan     => $self->chan,
         services => $self->services,
+        private  => $self->private,
     );
 
     $args{error_handler} = $args{warn_handler} = sub { }
@@ -121,6 +146,8 @@ __END__
 
 App::Nopaste::Command - command-line utility for L<App::Nopaste>
 
+nopaste - command-line utility to nopaste
+
 =head1 DESCRIPTION
 
 This application will take some text on STDIN and give you a URL on STDOUT.
@@ -137,7 +164,7 @@ characters of your text.
 
 =head2 -n, --name
 
-Your nickname, usually displayed with the paste. Default: C<$NOPASTE_USER> then
+Your nickname, usually displayed with the paste. Default: C<$NOPASTE_NICK> then
 C<$USER>.
 
 =head2 -l, --lang

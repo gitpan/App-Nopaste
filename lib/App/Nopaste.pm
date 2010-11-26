@@ -7,7 +7,7 @@ use Module::Pluggable search_path => 'App::Nopaste::Service';
 use base 'Exporter';
 our @EXPORT_OK = 'nopaste';
 
-our $VERSION = '0.22';
+our $VERSION = '0.23';
 
 sub nopaste {
     # process arguments {{{
@@ -140,7 +140,7 @@ See the documentation in L<App::Nopaste::Command>.
         },
 
         # you may specify the services to use - but you don't have to
-        services => ["Rafb", "Husk"],
+        services => ["Shadowcat", "Gist"],
     );
 
     print $url if $url;
@@ -156,7 +156,7 @@ message and the service that issued it.
 
 =head1 SEE ALSO
 
-L<WebService::NoPaste>, L<WWW::PastebinCom::Create>, L<WWW::Rafb::Create>, L<Devel::REPL::Plugin::Nopaste>
+L<WebService::NoPaste>, L<WWW::Pastebin::PastebinCom::Create>, L<Devel::REPL::Plugin::Nopaste>
 
 =head1 AUTHOR
 
@@ -164,7 +164,7 @@ Shawn M Moore, C<sartak@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2008-2009 Shawn M Moore.
+Copyright 2008-2010 Shawn M Moore.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

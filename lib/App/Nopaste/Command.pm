@@ -99,6 +99,7 @@ sub run {
 
     my %args = (
         text     => $text,
+        filename => $self->detect_filename,
         desc     => $self->desc,
         nick     => $self->nick,
         lang     => $self->lang,
@@ -133,6 +134,15 @@ sub read_text {
     local @ARGV = @{ $self->extra_argv };
     local $/;
     return <>;
+}
+
+sub detect_filename {
+    my $self  = shift;
+    my @files = @{ $self->extra_argv };
+
+    return undef unless @files;
+    return undef if $self->paste or $files[0] eq '-';
+    return $files[0];
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -178,7 +188,7 @@ The channel for the nopaste, not always relevant. Usually tied to a pastebot in 
 
 =head2 -s, --services
 
-The nopaste services to try, in order. You may also specify this in C<$NOPASTE_SERVICES> (space-separated list of service names, e.g. C<Husk Shadowcat Rafb>).
+The nopaste services to try, in order. You may also specify this in C<$NOPASTE_SERVICES> (space-separated list of service names, e.g. C<Shadowcat Gist>).
 
 =head2 -x, --copy
 

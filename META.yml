@@ -18,6 +18,7 @@ no_index:
     - inc
     - t
 requires:
+  Browser::Open: 0
   Clipboard: 0
   Config::GitLike: 0.00
   File::Spec: 0
@@ -32,4 +33,4 @@ resources:
   homepage: http://github.com/sartak/app-nopaste/tree
   license: http://dev.perl.org/licenses/
   repository: git://github.com/sartak/app-nopaste.git
-version: 0.25
+version: 0.26

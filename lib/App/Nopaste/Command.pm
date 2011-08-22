@@ -105,16 +105,11 @@ sub run {
 
     my $text = $self->read_text;
 
-    my %args = (
-        text     => $text,
-        filename => $self->detect_filename,
-        desc     => $self->desc,
-        nick     => $self->nick,
-        lang     => $self->lang,
-        chan     => $self->chan,
-        services => $self->services,
-        private  => $self->private,
-    );
+    my %args = map {
+        $_->name => $_->get_value($self)
+    } $self->meta->get_all_attributes;
+
+    $args{text} ||= $text;
 
     $args{error_handler} = $args{warn_handler} = sub { }
         if $self->quiet;
@@ -207,6 +202,10 @@ The channel for the nopaste, not always relevant. Usually tied to a pastebot in 
 
 The nopaste services to try, in order. You may also specify this in C<$NOPASTE_SERVICES> (space-separated list of service names, e.g. C<Shadowcat Gist>).
 
+=head2 -L, --list
+
+List available nopaste services.
+
 =head2 -x, --copy
 
 If specified, automatically copy the URL to your clipboard, using the
@@ -221,9 +220,12 @@ If specified, use only the clipboard as input, using the L<Clipboard> module.
 If specified, automatically open the URL using L<Browser::Open>.  Browser::Open
 tries a number of different browser commands depending on your OS.
 
+=head2 --private
+
+If specified, the paste access will be restricted to those that know the URL.
+
 =head2 -q, --quiet
 
 If specified, do not warn or complain about broken services.
 
 =cut
-

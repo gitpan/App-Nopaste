@@ -7,7 +7,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 1.00'
+generated_by: 'Module::Install version 1.01'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -19,6 +19,7 @@ no_index:
     - t
 requires:
   Browser::Open: 0
+  Class::Load: 0
   Clipboard: 0
   Config::GitLike: 0.00
   File::Spec: 0
@@ -32,5 +33,8 @@ requires:
 resources:
   homepage: http://github.com/sartak/app-nopaste/tree
   license: http://dev.perl.org/licenses/
-  repository: git://github.com/sartak/app-nopaste.git
-version: 0.28
+  repository:
+    type: git
+    url: git://github.com/sartak/app-nopaste.git
+    web: http://github.com/sartak/app-nopaste/tree
+version: 0.29

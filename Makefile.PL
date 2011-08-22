@@ -1,6 +1,8 @@
 # Load the Module::Install bundled in ./inc/
 use inc::Module::Install;
 use Module::Install::GithubMeta;
+use Module::Install::ManifestSkip;
+use Module::Install::AutoManifest;
 
 # Define metadata
 name           'App-Nopaste';
@@ -11,6 +13,7 @@ requires       'WWW::Mechanize';
 requires       'Module::Pluggable';
 requires       'Moose' => '0.74';
 requires       'MooseX::Getopt' => '0.17';
+requires       'Class::Load';
 
 features(
     'pastebin.com support' => [
@@ -34,5 +37,7 @@ features(
 install_script 'bin/nopaste';
 
 auto_install;
+manifest_skip;
+auto_manifest;
 WriteAll;
 

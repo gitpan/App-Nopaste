@@ -37,4 +37,4 @@ resources:
     type: git
     url: git://github.com/sartak/app-nopaste.git
     web: http://github.com/sartak/app-nopaste/tree
-version: 0.29
+version: 0.30

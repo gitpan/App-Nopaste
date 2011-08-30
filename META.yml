@@ -27,6 +27,7 @@ requires:
   Module::Pluggable: 0
   Moose: 0.74
   MooseX::Getopt: 0.17
+  URI::Escape: 0
   WWW::Mechanize: 0
   WWW::Pastebin::PastebinCom::Create: 0
   perl: 5.8.3
@@ -37,4 +38,4 @@ resources:
     type: git
     url: git://github.com/sartak/app-nopaste.git
     web: http://github.com/sartak/app-nopaste/tree
-version: 0.30
+version: 0.31

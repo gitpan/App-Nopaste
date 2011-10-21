@@ -8,7 +8,7 @@ use Class::Load 'load_class';
 use base 'Exporter';
 our @EXPORT_OK = 'nopaste';
 
-our $VERSION = '0.31';
+our $VERSION = '0.32';
 
 sub nopaste {
     # process arguments
@@ -42,7 +42,11 @@ sub nopaste {
     defined $args{text}
         or Carp::croak "You must specify the text to nopaste";
 
-    $args{error_handler} ||= sub { warn "$_[1]: $_[0]" };
+    $args{error_handler} ||= sub {
+        my ($msg, $srv) = @_;
+        $msg =~ s/\n*$/\n/;
+        warn "$srv: $msg"
+    };
 
     # try to paste to each service in order
     for my $service (@{ $args{services} }) {

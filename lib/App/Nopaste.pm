@@ -8,7 +8,7 @@ use Class::Load 'load_class';
 use base 'Exporter';
 our @EXPORT_OK = 'nopaste';
 
-our $VERSION = '0.32';
+our $VERSION = '0.33';
 
 sub nopaste {
     # process arguments
@@ -162,6 +162,8 @@ message and the service that issued it.
 =head1 SEE ALSO
 
 L<WebService::NoPaste>, L<WWW::Pastebin::PastebinCom::Create>, L<Devel::REPL::Plugin::Nopaste>
+
+L<http://perladvent.org/2011/2011-12-14.html>
 
 =head1 AUTHOR
 

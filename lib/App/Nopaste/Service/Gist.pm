@@ -3,6 +3,9 @@ use strict;
 use warnings;
 use base 'App::Nopaste::Service';
 
+use File::Basename ();
+use JSON ();
+
 sub available         { 1 }
 sub forbid_in_default { 0 }
 
@@ -15,17 +18,25 @@ sub run {
     my ($self, %arg) = @_;
     my $ua = LWP::UserAgent->new;
 
+    my $content = {
+        public => defined $arg{private} ? 0 : 1,
+        defined $arg{desc} ? (description => $arg{desc}) : (),
+    };
+
+    $content->{files} = {
+        File::Basename::basename($arg{filename}) => {
+            content => $arg{text}
+        }
+    };
+
+    $content = JSON::encode_json($content);
+
     my %auth = $self->_get_auth;
 
     my $res = $ua->post(
-      'https://gist.github.com/api/v1/json/new',
-      {
-        'file_ext[gistfile1]'      => '.' . ( $arg{lang} || 'txt' ),
-        'file_contents[gistfile1]' => $arg{text},
-        %auth,
-        defined $arg{private} ?  (private => 1) : (),
-        defined $arg{desc} ? (description => $arg{desc}) : (),
-      },
+        'https://api.github.com/gists',
+        'Authorization' => "token $auth{oauth_token}",
+        Content         => $content
     );
 
     return $self->return($res);
@@ -34,39 +45,50 @@ sub run {
 sub _get_auth {
     my ($self) = @_;
 
-    if ($ENV{GITHUB_USER} && $ENV{GITHUB_TOKEN}) {
-        my $user  = $ENV{GITHUB_USER};
-        my $token = $ENV{GITHUB_TOKEN};
-
-        return (
-            login => $user,
-            token => $token,
-        );
-    } elsif (eval "require Git; 1") {
-        my $user  = Git::config('github.user');
-        my $token = Git::config('github.token');
-
-        return unless $user and $token;
-
-        return (
-            login => $user,
-            token => $token,
-        );
-    } elsif (eval "require Config::GitLike; 1") {
-        my $gitconfig = Config::GitLike->new( confname => 'gitconfig' );
-        $gitconfig->load;
-        my $user  = $gitconfig->get( key => 'github.user' );
-        my $token = $gitconfig->get( key => 'github.token' );
-
-        return unless $user and $token;
-
-        return (
-            login => $user,
-            token => $token,
-        );
+    if (my $oauth_token = $ENV{GITHUB_OAUTH_TOKEN}) {
+        return (oauth_token => $oauth_token);
     }
 
-    return;
+    die join("\n",
+        "Export GITHUB_OAUTH_TOKEN first. For example:",
+        "    perl -Ilib -MApp::Nopaste::Service::Gist -e 'App::Nopaste::Service::Gist->create_token'"
+    ) . "\n";
+}
+
+sub create_token {
+    my ($self) = @_;
+
+    local $| = 1;
+    print "Username: ";
+    chomp(my $username = <>);
+    print "Password: ";
+    chomp(my $password = <>);
+    print "\n\n";
+
+    exit unless $username && $password;
+
+    my $parameters = {
+        scopes   => ["gist"],
+        note     => "App::Nopaste",
+        note_url => "https://metacpan.org/module/App::Nopaste",
+    };
+
+    my $ua = LWP::UserAgent->new;
+
+    my $request = HTTP::Request->new(POST => 'https://api.github.com/authorizations');
+    $request->authorization_basic($username, $password);
+    $request->content(JSON::encode_json($parameters));
+
+    my $response = $ua->request($request);
+
+    my $response_content = JSON::decode_json($response->decoded_content);
+
+    if ($response_content->{token} ) {
+        print "GITHUB_OAUTH_TOKEN=$response_content->{token}\n";
+    }
+    else {
+        print $response_content->{message} || "Unspecified error", "\n";
+    }
 }
 
 sub return {
@@ -80,7 +102,7 @@ sub return {
       return (0, "LWP Error: " . $res->content);
     }
 
-    my ($id) = $res->content =~ qr{"repo":"([0-9a-f]+)"};
+    my ($id) = $res->content =~ qr{"id":"([0-9a-f]+)"};
 
     return (0, "Could not find paste link.") if !$id;
     return (1, "http://gist.github.com/$id");
@@ -93,6 +115,24 @@ __END__
 =head1 NAME
 
 App::Nopaste::Service::Gist - http://gist.github.com/
+
+=head1 GitHub Authorization
+
+In order to create gists you have to get an oauth token. That could be easily
+obtained via curl:
+
+    curl -X POST 'https://USERNAME:PASSWORD@api.github.com/authorizations' \
+        -d '{"scopes":["gist"],"note":"App::Nopaste"}'
+
+or you can use this module to do the same:
+
+    perl -Ilib -MApp::Nopaste::Service::Gist -e 'App::Nopaste::Service::Gist->create_token'
+
+This will grant gist rights to the L<App::Nopaste>, don't worry you can revoke
+access rights anytime from the GitHub profile settings. Search for C<token> in
+response and export it as C<GITHUB_OAUTH_TOKEN> environment variable.
+
+That's it!
 
 =head1 AUTHOR
 

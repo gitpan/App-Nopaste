@@ -3,11 +3,12 @@ abstract: 'easy access to any pastebin'
 author:
   - 'Shawn M Moore, C<sartak@gmail.com>'
 build_requires:
-  ExtUtils::MakeMaker: 6.42
+  ExtUtils::MakeMaker: 6.59
 configure_requires:
-  ExtUtils::MakeMaker: 6.42
+  ExtUtils::MakeMaker: 6.59
 distribution_type: module
-generated_by: 'Module::Install version 1.01'
+dynamic_config: 1
+generated_by: 'Module::Install version 1.06'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -24,6 +25,7 @@ requires:
   Config::GitLike: 0.00
   File::Spec: 0
   File::Temp: 0
+  JSON: 0
   Module::Pluggable: 0
   Moose: 0.74
   MooseX::Getopt: 0.17
@@ -32,10 +34,10 @@ requires:
   WWW::Pastebin::PastebinCom::Create: 0
   perl: 5.8.3
 resources:
-  homepage: http://github.com/sartak/app-nopaste/tree
+  homepage: https://github.com/sartak/app-nopaste/tree
   license: http://dev.perl.org/licenses/
   repository:
     type: git
     url: git://github.com/sartak/app-nopaste.git
-    web: http://github.com/sartak/app-nopaste/tree
-version: 0.33
+    web: https://github.com/sartak/app-nopaste/tree
+version: 0.34

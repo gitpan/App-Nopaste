@@ -25,10 +25,9 @@ requires:
   Config::GitLike: 0.00
   File::Spec: 0
   File::Temp: 0
+  Getopt::Long::Descriptive: 0.090
   JSON: 0
   Module::Pluggable: 0
-  Moose: 0.74
-  MooseX::Getopt: 0.17
   URI::Escape: 0
   WWW::Mechanize: 0
   WWW::Pastebin::PastebinCom::Create: 0
@@ -40,4 +39,4 @@ resources:
     type: git
     url: git://github.com/sartak/app-nopaste.git
     web: https://github.com/sartak/app-nopaste/tree
-version: 0.35
+version: 0.90

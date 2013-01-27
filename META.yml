@@ -22,7 +22,6 @@ requires:
   Browser::Open: 0
   Class::Load: 0
   Clipboard: 0
-  Config::GitLike: 0.00
   File::Spec: 0
   File::Temp: 0
   Getopt::Long::Descriptive: 0.090
@@ -35,8 +34,5 @@ requires:
 resources:
   homepage: https://github.com/sartak/app-nopaste/tree
   license: http://dev.perl.org/licenses/
-  repository:
-    type: git
-    url: git://github.com/sartak/app-nopaste.git
-    web: https://github.com/sartak/app-nopaste/tree
-version: 0.90
+  repository: git://github.com/sartak/app-nopaste.git
+version: 0.91

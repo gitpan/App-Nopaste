@@ -32,3 +32,4 @@ MANIFEST			This list of files
 META.yml
 t/000-load.t
 t/001-subclass_cmd.t
+t/002-encoding.t

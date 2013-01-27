@@ -25,7 +25,7 @@ sub run {
 
     my $filename = defined $arg{filename}
                  ? File::Basename::basename($arg{filename})
-                 : 'nopaste.txt';
+                 : 'nopaste';
 
     $content->{files} = {
         $filename => {
@@ -37,11 +37,23 @@ sub run {
 
     my %auth = $self->_get_auth;
 
-    my $res = $ua->post(
-        'https://api.github.com/gists',
-        'Authorization' => "token $auth{oauth_token}",
-        Content         => $content
-    );
+    my $url = 'https://api.github.com/gists';
+
+    my $res = do {
+        if ($auth{oauth_token}) {
+            $ua->post(
+                $url,
+                'Authorization' => "token $auth{oauth_token}",
+                Content         => $content
+            );
+        }
+        else {
+            require HTTP::Request::Common;
+            my $req = HTTP::Request::Common::POST($url, Content => $content);
+            $req->authorization_basic(@auth{qw/username password/});
+            $ua->request($req);
+        }
+    };
 
     return $self->return($res);
 }
@@ -52,10 +64,18 @@ sub _get_auth {
     if (my $oauth_token = $ENV{GITHUB_OAUTH_TOKEN}) {
         return (oauth_token => $oauth_token);
     }
+    elsif ($ENV{GITHUB_USER} && $ENV{GITHUB_PASSWORD}) {
+        return (
+            username => $ENV{GITHUB_USER},
+            password => $ENV{GITHUB_PASSWORD},
+        );
+    }
 
     die join("\n",
         "Export GITHUB_OAUTH_TOKEN first. For example:",
-        "    perl -Ilib -MApp::Nopaste::Service::Gist -e 'App::Nopaste::Service::Gist->create_token'"
+        "    perl -Ilib -MApp::Nopaste::Service::Gist -e 'App::Nopaste::Service::Gist->create_token'",
+        "",
+        "OR you can export GITHUB_USER and GITHUB_PASSWORD.",
     ) . "\n";
 }
 
@@ -99,14 +119,18 @@ sub return {
     my ($self, $res) = @_;
 
     if ($res->is_error) {
-      return (0, "Failed: " . $res->status_line);
+        my $text = $res->status_line;
+        if ($res->code == 401) {
+            $text .= "\nYou may need to authorize $0. See `perldoc " . __PACKAGE__ . "`";
+        }
+        return (0, "Failed: " . $text);
     }
 
     if (($res->header('Client-Warning') || '') eq 'Internal response') {
       return (0, "LWP Error: " . $res->content);
     }
 
-    my ($id) = $res->content =~ qr{"id":"([0-9a-f]+)"};
+    my $id = JSON::decode_json($res->content)->{id};
 
     return (0, "Could not find paste link.") if !$id;
     return (1, "http://gist.github.com/$id");
@@ -135,6 +159,10 @@ or you can use this module to do the same:
 This will grant gist rights to the L<App::Nopaste>, don't worry you can revoke
 access rights anytime from the GitHub profile settings. Search for C<token> in
 response and export it as C<GITHUB_OAUTH_TOKEN> environment variable.
+
+Alternatively, you can export the C<GITHUB_USER> and C<GITHUB_PASSWORD>
+environment variables, just like for the
+L<gist|https://github.com/defunkt/gist> utility.
 
 That's it!
 

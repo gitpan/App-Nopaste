@@ -35,4 +35,4 @@ resources:
   homepage: https://github.com/sartak/app-nopaste/tree
   license: http://dev.perl.org/licenses/
   repository: git://github.com/sartak/app-nopaste.git
-version: 0.91
+version: 0.92

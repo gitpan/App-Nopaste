@@ -1,6 +1,11 @@
-package App::Nopaste::Service::Ubuntu;
 use strict;
 use warnings;
+package App::Nopaste::Service::Ubuntu;
+$App::Nopaste::Service::Ubuntu::VERSION = '0.93';
+BEGIN {
+  $App::Nopaste::Service::Ubuntu::AUTHORITY = 'cpan:SARTAK';
+}
+
 use base 'App::Nopaste::Service';
 
 my $languages = {

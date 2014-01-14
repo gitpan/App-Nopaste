@@ -1,6 +1,11 @@
-package App::Nopaste::Service::Pastie;
 use strict;
 use warnings;
+package App::Nopaste::Service::Pastie;
+$App::Nopaste::Service::Pastie::VERSION = '0.93';
+BEGIN {
+  $App::Nopaste::Service::Pastie::AUTHORITY = 'cpan:SARTAK';
+}
+
 use base 'App::Nopaste::Service';
 
 my %languages = (

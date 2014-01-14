@@ -1,6 +1,11 @@
-package App::Nopaste::Service::Snitch;
 use strict;
 use warnings;
+package App::Nopaste::Service::Snitch;
+$App::Nopaste::Service::Snitch::VERSION = '0.93';
+BEGIN {
+  $App::Nopaste::Service::Snitch::AUTHORITY = 'cpan:SARTAK';
+}
+
 use base 'App::Nopaste::Service';
 
 sub available {

@@ -1,14 +1,18 @@
-package App::Nopaste;
 use strict;
 use warnings;
+package App::Nopaste;
+# git description: 0.33-33-g954e7c3
+$App::Nopaste::VERSION = '0.93';
+BEGIN {
+  $App::Nopaste::AUTHORITY = 'cpan:SARTAK';
+}
+
 use 5.008003;
 use Module::Pluggable search_path => 'App::Nopaste::Service';
 use Class::Load 'load_class';
 
 use base 'Exporter';
 our @EXPORT_OK = 'nopaste';
-
-our $VERSION = '0.92';
 
 sub nopaste {
     # process arguments

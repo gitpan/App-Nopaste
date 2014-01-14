@@ -1,6 +1,11 @@
-package App::Nopaste::Service::Debian;
 use strict;
 use warnings;
+package App::Nopaste::Service::Debian;
+$App::Nopaste::Service::Debian::VERSION = '0.93';
+BEGIN {
+  $App::Nopaste::Service::Debian::AUTHORITY = 'cpan:SARTAK';
+}
+
 use base 'App::Nopaste::Service';
 
 my $languages = {

@@ -1,11 +1,10 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::PastebinCom;
-$App::Nopaste::Service::PastebinCom::VERSION = '0.93';
 BEGIN {
   $App::Nopaste::Service::PastebinCom::AUTHORITY = 'cpan:SARTAK';
 }
-
+$App::Nopaste::Service::PastebinCom::VERSION = '0.94';
 use base 'App::Nopaste::Service';
 
 sub available {

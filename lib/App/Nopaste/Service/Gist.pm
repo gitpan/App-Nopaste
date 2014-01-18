@@ -1,11 +1,10 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Gist;
-$App::Nopaste::Service::Gist::VERSION = '0.93';
 BEGIN {
   $App::Nopaste::Service::Gist::AUTHORITY = 'cpan:SARTAK';
 }
-
+$App::Nopaste::Service::Gist::VERSION = '0.94';
 use base 'App::Nopaste::Service';
 
 use File::Basename ();

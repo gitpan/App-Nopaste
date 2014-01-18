@@ -1,11 +1,10 @@
 use strict;
 use warnings;
 package App::Nopaste::Service;
-$App::Nopaste::Service::VERSION = '0.93';
 BEGIN {
   $App::Nopaste::Service::AUTHORITY = 'cpan:SARTAK';
 }
-
+$App::Nopaste::Service::VERSION = '0.94';
 use WWW::Mechanize;
 
 sub available         { 1 }

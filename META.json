@@ -4,7 +4,7 @@
       "Shawn M Moore, <sartak@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.011, CPAN::Meta::Converter version 2.133380",
+   "generated_by" : "Dist::Zilla version 5.012, CPAN::Meta::Converter version 2.133380",
    "license" : [
       "perl_5"
    ],
@@ -77,12 +77,12 @@
       },
       "develop" : {
          "recommends" : {
-            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.046"
+            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.047"
          },
          "requires" : {
             "Browser::Open" : "0",
             "Clipboard" : "0",
-            "Dist::Zilla" : "5.011",
+            "Dist::Zilla" : "5.012",
             "Dist::Zilla::Plugin::ContributorsFromGit" : "0",
             "Dist::Zilla::Plugin::GitHub::Update" : "0",
             "Dist::Zilla::Plugin::GithubMeta" : "0",
@@ -138,51 +138,51 @@
    "provides" : {
       "App::Nopaste" : {
          "file" : "lib/App/Nopaste.pm",
-         "version" : "0.93"
+         "version" : "0.94"
       },
       "App::Nopaste::Command" : {
          "file" : "lib/App/Nopaste/Command.pm",
-         "version" : "0.93"
+         "version" : "0.94"
       },
       "App::Nopaste::Service" : {
          "file" : "lib/App/Nopaste/Service.pm",
-         "version" : "0.93"
+         "version" : "0.94"
       },
       "App::Nopaste::Service::Codepeek" : {
          "file" : "lib/App/Nopaste/Service/Codepeek.pm",
-         "version" : "0.93"
+         "version" : "0.94"
       },
       "App::Nopaste::Service::Debian" : {
          "file" : "lib/App/Nopaste/Service/Debian.pm",
-         "version" : "0.93"
+         "version" : "0.94"
       },
       "App::Nopaste::Service::Gist" : {
          "file" : "lib/App/Nopaste/Service/Gist.pm",
-         "version" : "0.93"
+         "version" : "0.94"
       },
       "App::Nopaste::Service::PastebinCom" : {
          "file" : "lib/App/Nopaste/Service/PastebinCom.pm",
-         "version" : "0.93"
+         "version" : "0.94"
       },
       "App::Nopaste::Service::Pastie" : {
          "file" : "lib/App/Nopaste/Service/Pastie.pm",
-         "version" : "0.93"
+         "version" : "0.94"
       },
       "App::Nopaste::Service::Shadowcat" : {
          "file" : "lib/App/Nopaste/Service/Shadowcat.pm",
-         "version" : "0.93"
+         "version" : "0.94"
       },
       "App::Nopaste::Service::Snitch" : {
          "file" : "lib/App/Nopaste/Service/Snitch.pm",
-         "version" : "0.93"
+         "version" : "0.94"
       },
       "App::Nopaste::Service::Ubuntu" : {
          "file" : "lib/App/Nopaste/Service/Ubuntu.pm",
-         "version" : "0.93"
+         "version" : "0.94"
       },
       "App::Nopaste::Service::ssh" : {
          "file" : "lib/App/Nopaste/Service/ssh.pm",
-         "version" : "0.93"
+         "version" : "0.94"
       }
    },
    "release_status" : "stable",
@@ -198,7 +198,7 @@
          "web" : "https://github.com/karenetheridge/App-Nopaste"
       }
    },
-   "version" : "0.93",
+   "version" : "0.94",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.019007"
@@ -242,17 +242,17 @@
          {
             "class" : "Dist::Zilla::Plugin::ExecDir",
             "name" : "@Author::ETHER/ExecDir",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::ShareDir",
             "name" : "@Author::ETHER/ShareDir",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::FileFinder::ByName",
             "name" : "@Author::ETHER/Examples",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::GatherDir",
@@ -262,27 +262,27 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaYAML",
             "name" : "@Author::ETHER/MetaYAML",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaJSON",
             "name" : "@Author::ETHER/MetaJSON",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::License",
             "name" : "@Author::ETHER/License",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::Readme",
             "name" : "@Author::ETHER/Readme",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::Manifest",
             "name" : "@Author::ETHER/Manifest",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::GenerateFile::ShareDir",
@@ -295,7 +295,7 @@
                }
             },
             "name" : "@Author::ETHER/GenerateFile::ShareDir",
-            "version" : "0.004"
+            "version" : "0.005"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::Compile",
@@ -338,7 +338,7 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaTests",
             "name" : "@Author::ETHER/MetaTests",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::Version",
@@ -363,7 +363,7 @@
          {
             "class" : "Dist::Zilla::Plugin::PodSyntaxTests",
             "name" : "@Author::ETHER/PodSyntaxTests",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::Kwalitee",
@@ -378,7 +378,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Test::ReportPrereqs",
             "name" : "@Author::ETHER/Test::ReportPrereqs",
-            "version" : "0.011"
+            "version" : "0.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::Portability",
@@ -388,17 +388,12 @@
          {
             "class" : "Dist::Zilla::Plugin::PruneCruft",
             "name" : "@Author::ETHER/PruneCruft",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::ManifestSkip",
             "name" : "@Author::ETHER/ManifestSkip",
-            "version" : "5.011"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Authority",
-            "name" : "@Author::ETHER/Authority",
-            "version" : "1.006"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Describe",
@@ -408,12 +403,17 @@
          {
             "class" : "Dist::Zilla::Plugin::PkgVersion",
             "name" : "@Author::ETHER/PkgVersion",
-            "version" : "5.011"
+            "version" : "5.012"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Authority",
+            "name" : "@Author::ETHER/Authority",
+            "version" : "1.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::NextRelease",
             "name" : "@Author::ETHER/NextRelease",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
@@ -433,7 +433,7 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaNoIndex",
             "name" : "@Author::ETHER/MetaNoIndex",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaProvides::Package",
@@ -446,7 +446,7 @@
                      {
                         "class" : "Dist::Zilla::Plugin::FinderCode",
                         "name" : ":InstallModules",
-                        "version" : "5.011"
+                        "version" : "5.012"
                      }
                   ]
                },
@@ -462,7 +462,7 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
             "name" : "@Author::ETHER/MetaConfig",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs::AuthorDeps",
@@ -483,7 +483,7 @@
                }
             },
             "name" : "@Author::ETHER/installer_requirements",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
@@ -494,7 +494,7 @@
                }
             },
             "name" : "@Author::ETHER/pluginbundle_version",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::RunExtraTests",
@@ -554,7 +554,7 @@
          {
             "class" : "Dist::Zilla::Plugin::TestRelease",
             "name" : "@Author::ETHER/TestRelease",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Check",
@@ -564,7 +564,7 @@
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
             "name" : "@Author::ETHER/UploadToCPAN",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::CopyFilesFromRelease",
@@ -605,12 +605,12 @@
                }
             },
             "name" : "@Author::ETHER/via_options",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::ConfirmRelease",
             "name" : "@Author::ETHER/ConfirmRelease",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::ContributorsFromGit",
@@ -626,7 +626,7 @@
                }
             },
             "name" : "RuntimeRequires",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
@@ -637,67 +637,120 @@
                }
             },
             "name" : "TestRequires",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
+            "config" : {
+               "Dist::Zilla::Plugin::OptionalFeature" : {
+                  "always_recommend" : "1",
+                  "default" : "0",
+                  "description" : "pastebin.com support",
+                  "name" : "pastebin",
+                  "phase" : "runtime",
+                  "prereqs" : {
+                     "WWW::Pastebin::PastebinCom::Create" : "0"
+                  },
+                  "type" : "requires"
+               }
+            },
             "name" : "pastebin",
-            "version" : "0.008"
+            "version" : "0.010"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
+            "config" : {
+               "Dist::Zilla::Plugin::OptionalFeature" : {
+                  "always_recommend" : "1",
+                  "default" : "0",
+                  "description" : "copying of URLs with -x/--copy",
+                  "name" : "Clipboard",
+                  "phase" : "runtime",
+                  "prereqs" : {
+                     "Clipboard" : "0"
+                  },
+                  "type" : "requires"
+               }
+            },
             "name" : "Clipboard",
-            "version" : "0.008"
+            "version" : "0.010"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
+            "config" : {
+               "Dist::Zilla::Plugin::OptionalFeature" : {
+                  "always_recommend" : "1",
+                  "default" : "1",
+                  "description" : "copy files to remote server with scp",
+                  "name" : "scp",
+                  "phase" : "runtime",
+                  "prereqs" : {
+                     "File::Spec" : "0",
+                     "File::Temp" : "0"
+                  },
+                  "type" : "requires"
+               }
+            },
             "name" : "scp",
-            "version" : "0.008"
+            "version" : "0.010"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
+            "config" : {
+               "Dist::Zilla::Plugin::OptionalFeature" : {
+                  "always_recommend" : "1",
+                  "default" : "0",
+                  "description" : "open URLs in a browser",
+                  "name" : "browser",
+                  "phase" : "runtime",
+                  "prereqs" : {
+                     "Browser::Open" : "0"
+                  },
+                  "type" : "requires"
+               }
+            },
             "name" : "browser",
-            "version" : "0.008"
+            "version" : "0.010"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":InstallModules",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":IncModules",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":TestFiles",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":ExecFiles",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":ShareFiles",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":MainModule",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":AllFiles",
-            "version" : "5.011"
+            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":NoFiles",
-            "version" : "5.011"
+            "version" : "5.012"
          }
       ],
       "zilla" : {
@@ -705,7 +758,7 @@
          "config" : {
             "is_trial" : "0"
          },
-         "version" : "5.011"
+         "version" : "5.012"
       }
    },
    "x_authority" : "cpan:SARTAK",
@@ -714,6 +767,7 @@
       "David Bremner <bremner@unb.ca>",
       "David Golden <dagolden@cpan.org>",
       "Fran\u00e7ois Gannaz <francois.gannaz@silecs.info>",
+      "Graham Knop <haarg@haarg.org>",
       "Jason Mills <jmmills@cpan.org>",
       "Jesse Luehrs <doy@tozt.net>",
       "John Goulah <jgoulah@gmail.com>",

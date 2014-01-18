@@ -1,11 +1,10 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::ssh;
-$App::Nopaste::Service::ssh::VERSION = '0.93';
 BEGIN {
   $App::Nopaste::Service::ssh::AUTHORITY = 'cpan:SARTAK';
 }
-
+$App::Nopaste::Service::ssh::VERSION = '0.94';
 use base 'App::Nopaste::Service';
 use File::Temp;
 use File::Spec;

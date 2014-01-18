@@ -1,11 +1,10 @@
 use strict;
 use warnings;
 package App::Nopaste::Command;
-$App::Nopaste::Command::VERSION = '0.93';
 BEGIN {
   $App::Nopaste::Command::AUTHORITY = 'cpan:SARTAK';
 }
-
+$App::Nopaste::Command::VERSION = '0.94';
 use Getopt::Long::Descriptive ();
 
 use App::Nopaste;

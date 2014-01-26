@@ -4,7 +4,7 @@ package App::Nopaste::Service::PastebinCom;
 BEGIN {
   $App::Nopaste::Service::PastebinCom::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Service::PastebinCom::VERSION = '0.94';
+$App::Nopaste::Service::PastebinCom::VERSION = '0.95';
 use base 'App::Nopaste::Service';
 
 sub available {

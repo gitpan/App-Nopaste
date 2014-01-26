@@ -4,7 +4,7 @@ package App::Nopaste::Command;
 BEGIN {
   $App::Nopaste::Command::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Command::VERSION = '0.94';
+$App::Nopaste::Command::VERSION = '0.95';
 use Getopt::Long::Descriptive ();
 
 use App::Nopaste;

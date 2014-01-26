@@ -4,7 +4,7 @@ package App::Nopaste::Service;
 BEGIN {
   $App::Nopaste::Service::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Service::VERSION = '0.94';
+$App::Nopaste::Service::VERSION = '0.95';
 use WWW::Mechanize;
 
 sub available         { 1 }

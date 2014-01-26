@@ -4,7 +4,7 @@ package App::Nopaste::Service::ssh;
 BEGIN {
   $App::Nopaste::Service::ssh::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Service::ssh::VERSION = '0.94';
+$App::Nopaste::Service::ssh::VERSION = '0.95';
 use base 'App::Nopaste::Service';
 use File::Temp;
 use File::Spec;

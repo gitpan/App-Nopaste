@@ -4,7 +4,7 @@ package App::Nopaste::Service::Codepeek;
 BEGIN {
   $App::Nopaste::Service::Codepeek::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Service::Codepeek::VERSION = '0.94';
+$App::Nopaste::Service::Codepeek::VERSION = '0.95';
 use base 'App::Nopaste::Service';
 
 sub uri { 'http://codepeek.com/paste' }

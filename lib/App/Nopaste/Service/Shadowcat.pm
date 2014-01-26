@@ -4,7 +4,7 @@ package App::Nopaste::Service::Shadowcat;
 BEGIN {
   $App::Nopaste::Service::Shadowcat::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Service::Shadowcat::VERSION = '0.94';
+$App::Nopaste::Service::Shadowcat::VERSION = '0.95';
 use base 'App::Nopaste::Service';
 
 sub available {

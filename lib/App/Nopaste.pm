@@ -4,8 +4,8 @@ package App::Nopaste;
 BEGIN {
   $App::Nopaste::AUTHORITY = 'cpan:SARTAK';
 }
-# git description: 0.93-3-gebde021
-$App::Nopaste::VERSION = '0.94';
+# git description: 0.94-3-g98eeedd
+$App::Nopaste::VERSION = '0.95';
 
 use 5.008003;
 use Module::Pluggable search_path => 'App::Nopaste::Service';

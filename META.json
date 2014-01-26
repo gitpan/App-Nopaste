@@ -49,7 +49,7 @@
          "prereqs" : {
             "runtime" : {
                "requires" : {
-                  "WWW::Pastebin::PastebinCom::Create" : "0"
+                  "WWW::Pastebin::PastebinCom::Create" : "1.003"
                }
             }
          },
@@ -72,12 +72,12 @@
       "configure" : {
          "requires" : {
             "ExtUtils::MakeMaker" : "6.30",
-            "Module::Build::Tiny" : "0.030"
+            "Module::Build::Tiny" : "0.034"
          }
       },
       "develop" : {
          "recommends" : {
-            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.047"
+            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.048"
          },
          "requires" : {
             "Browser::Open" : "0",
@@ -101,7 +101,7 @@
             "Test::More" : "0.94",
             "Test::NoTabs" : "0",
             "Test::Pod" : "1.41",
-            "WWW::Pastebin::PastebinCom::Create" : "0"
+            "WWW::Pastebin::PastebinCom::Create" : "1.003"
          }
       },
       "runtime" : {
@@ -110,7 +110,7 @@
             "Clipboard" : "0",
             "File::Spec" : "0",
             "File::Temp" : "0",
-            "WWW::Pastebin::PastebinCom::Create" : "0"
+            "WWW::Pastebin::PastebinCom::Create" : "1.003"
          },
          "requires" : {
             "Class::Load" : "0",
@@ -127,7 +127,7 @@
       "test" : {
          "recommends" : {
             "CPAN::Meta" : "0",
-            "CPAN::Meta::Requirements" : "0"
+            "CPAN::Meta::Requirements" : "2.120900"
          },
          "requires" : {
             "LWP::Protocol" : "0",
@@ -138,51 +138,51 @@
    "provides" : {
       "App::Nopaste" : {
          "file" : "lib/App/Nopaste.pm",
-         "version" : "0.94"
+         "version" : "0.95"
       },
       "App::Nopaste::Command" : {
          "file" : "lib/App/Nopaste/Command.pm",
-         "version" : "0.94"
+         "version" : "0.95"
       },
       "App::Nopaste::Service" : {
          "file" : "lib/App/Nopaste/Service.pm",
-         "version" : "0.94"
+         "version" : "0.95"
       },
       "App::Nopaste::Service::Codepeek" : {
          "file" : "lib/App/Nopaste/Service/Codepeek.pm",
-         "version" : "0.94"
+         "version" : "0.95"
       },
       "App::Nopaste::Service::Debian" : {
          "file" : "lib/App/Nopaste/Service/Debian.pm",
-         "version" : "0.94"
+         "version" : "0.95"
       },
       "App::Nopaste::Service::Gist" : {
          "file" : "lib/App/Nopaste/Service/Gist.pm",
-         "version" : "0.94"
+         "version" : "0.95"
       },
       "App::Nopaste::Service::PastebinCom" : {
          "file" : "lib/App/Nopaste/Service/PastebinCom.pm",
-         "version" : "0.94"
+         "version" : "0.95"
       },
       "App::Nopaste::Service::Pastie" : {
          "file" : "lib/App/Nopaste/Service/Pastie.pm",
-         "version" : "0.94"
+         "version" : "0.95"
       },
       "App::Nopaste::Service::Shadowcat" : {
          "file" : "lib/App/Nopaste/Service/Shadowcat.pm",
-         "version" : "0.94"
+         "version" : "0.95"
       },
       "App::Nopaste::Service::Snitch" : {
          "file" : "lib/App/Nopaste/Service/Snitch.pm",
-         "version" : "0.94"
+         "version" : "0.95"
       },
       "App::Nopaste::Service::Ubuntu" : {
          "file" : "lib/App/Nopaste/Service/Ubuntu.pm",
-         "version" : "0.94"
+         "version" : "0.95"
       },
       "App::Nopaste::Service::ssh" : {
          "file" : "lib/App/Nopaste/Service/ssh.pm",
-         "version" : "0.94"
+         "version" : "0.95"
       }
    },
    "release_status" : "stable",
@@ -198,7 +198,7 @@
          "web" : "https://github.com/karenetheridge/App-Nopaste"
       }
    },
-   "version" : "0.94",
+   "version" : "0.95",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.019007"
@@ -378,22 +378,12 @@
          {
             "class" : "Dist::Zilla::Plugin::Test::ReportPrereqs",
             "name" : "@Author::ETHER/Test::ReportPrereqs",
-            "version" : "0.012"
+            "version" : "0.013"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::Portability",
             "name" : "@Author::ETHER/Test::Portability",
             "version" : "2.000005"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::PruneCruft",
-            "name" : "@Author::ETHER/PruneCruft",
-            "version" : "5.012"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::ManifestSkip",
-            "name" : "@Author::ETHER/ManifestSkip",
-            "version" : "5.012"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Describe",
@@ -504,7 +494,7 @@
          {
             "class" : "Dist::Zilla::Plugin::MakeMaker::Fallback",
             "name" : "@Author::ETHER/MakeMaker::Fallback",
-            "version" : "0.005"
+            "version" : "0.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::ModuleBuildTiny",
@@ -518,8 +508,15 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::CheckSelfDependency",
+            "config" : {
+               "Dist::Zilla::Plugin::CheckSelfDependency" : {
+                  "finder" : [
+                     ":InstallModules"
+                  ]
+               }
+            },
             "name" : "@Author::ETHER/CheckSelfDependency",
-            "version" : "0.006"
+            "version" : "0.007"
          },
          {
             "class" : "Dist::Zilla::Plugin::Run::AfterBuild",
@@ -649,13 +646,14 @@
                   "name" : "pastebin",
                   "phase" : "runtime",
                   "prereqs" : {
-                     "WWW::Pastebin::PastebinCom::Create" : "0"
+                     "WWW::Pastebin::PastebinCom::Create" : "1.003"
                   },
+                  "require_develop" : "1",
                   "type" : "requires"
                }
             },
             "name" : "pastebin",
-            "version" : "0.010"
+            "version" : "0.011"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
@@ -669,11 +667,12 @@
                   "prereqs" : {
                      "Clipboard" : "0"
                   },
+                  "require_develop" : "1",
                   "type" : "requires"
                }
             },
             "name" : "Clipboard",
-            "version" : "0.010"
+            "version" : "0.011"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
@@ -688,11 +687,12 @@
                      "File::Spec" : "0",
                      "File::Temp" : "0"
                   },
+                  "require_develop" : "1",
                   "type" : "requires"
                }
             },
             "name" : "scp",
-            "version" : "0.010"
+            "version" : "0.011"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
@@ -706,11 +706,12 @@
                   "prereqs" : {
                      "Browser::Open" : "0"
                   },
+                  "require_develop" : "1",
                   "type" : "requires"
                }
             },
             "name" : "browser",
-            "version" : "0.010"
+            "version" : "0.011"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
@@ -786,6 +787,7 @@
       "Thomas Sibley <trs@bestpractical.com>",
       "Thomas Sibley <tsibley@cpan.org>",
       "Yuval Kogman <nothingmuch@woobling.org>",
+      "Zoffix Znet <cpan@zoffix.com>",
       "gregor herrmann <gregoa@debian.org>",
       "jluehrs2 <jluehrs2@uiuc.edu>",
       "vti <viacheslav.t@gmail.com>",

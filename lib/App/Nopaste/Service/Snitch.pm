@@ -4,7 +4,7 @@ package App::Nopaste::Service::Snitch;
 BEGIN {
   $App::Nopaste::Service::Snitch::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Service::Snitch::VERSION = '0.95';
+$App::Nopaste::Service::Snitch::VERSION = '0.96';
 use base 'App::Nopaste::Service';
 
 sub available {
@@ -16,12 +16,16 @@ sub available {
 sub uri { "http://nopaste.snit.ch" }
 
 1;
-
 __END__
+
+=pod
 
 =head1 NAME
 
 App::Nopaste::Service::Snitch - http://nopaste.snit.ch/
 
-=cut
+=head1 VERSION
 
+version 0.96
+
+=cut

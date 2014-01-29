@@ -4,7 +4,7 @@ package App::Nopaste::Service::Codepeek;
 BEGIN {
   $App::Nopaste::Service::Codepeek::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Service::Codepeek::VERSION = '0.95';
+$App::Nopaste::Service::Codepeek::VERSION = '0.96';
 use base 'App::Nopaste::Service';
 
 sub uri { 'http://codepeek.com/paste' }
@@ -36,16 +36,20 @@ sub return {
 }
 
 1;
-
 __END__
+
+=pod
 
 =head1 NAME
 
 App::Nopaste::Service::Codepeek - http://codepeek.com
+
+=head1 VERSION
+
+version 0.96
 
 =head1 AUTHOR
 
 Justin Hunter, C<< <justin.d.hunter@gmail.com> >>
 
 =cut
-

@@ -4,11 +4,12 @@ package App::Nopaste::Service::Gist;
 BEGIN {
   $App::Nopaste::Service::Gist::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Service::Gist::VERSION = '0.95';
+$App::Nopaste::Service::Gist::VERSION = '0.96';
 use base 'App::Nopaste::Service';
 
 use File::Basename ();
 use JSON ();
+use Module::Runtime 'use_module';
 
 sub available         { 1 }
 sub forbid_in_default { 0 }
@@ -52,7 +53,7 @@ sub run {
             );
         }
         else {
-            require HTTP::Request::Common;
+            use_module('HTTP::Request::Common');
             my $req = HTTP::Request::Common::POST($url, Content => $content);
             $req->authorization_basic(@auth{qw/username password/});
             $ua->request($req);
@@ -141,12 +142,17 @@ sub return {
 }
 
 1;
-
 __END__
+
+=pod
 
 =head1 NAME
 
 App::Nopaste::Service::Gist - http://gist.github.com/
+
+=head1 VERSION
+
+version 0.96
 
 =head1 GitHub Authorization
 
@@ -175,4 +181,3 @@ That's it!
 Ricardo SIGNES, C<< <rjbs@cpan.org> >>
 
 =cut
-

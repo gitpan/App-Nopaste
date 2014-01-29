@@ -10,13 +10,18 @@ if (my $url = App::Nopaste::Command->new_with_options->run) {
 
 __END__
 
+=pod
+
 =head1 NAME
 
 nopaste - command-line utility to nopaste
+
+=head1 VERSION
+
+version 0.96
 
 =head1 DESCRIPTION
 
 See the documentation of L<App::Nopaste::Command>.
 
 =cut
-

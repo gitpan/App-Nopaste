@@ -4,7 +4,7 @@ package App::Nopaste::Service::Pastie;
 BEGIN {
   $App::Nopaste::Service::Pastie::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Service::Pastie::VERSION = '0.95';
+$App::Nopaste::Service::Pastie::VERSION = '0.96';
 use base 'App::Nopaste::Service';
 
 my %languages = (
@@ -96,12 +96,16 @@ sub return {
 }
 
 1;
-
 __END__
+
+=pod
 
 =head1 NAME
 
 App::Nopaste::Service::Pastie - http://pastie.org
 
-=cut
+=head1 VERSION
 
+version 0.96
+
+=cut

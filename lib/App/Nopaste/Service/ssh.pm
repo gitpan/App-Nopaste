@@ -4,7 +4,7 @@ package App::Nopaste::Service::ssh;
 BEGIN {
   $App::Nopaste::Service::ssh::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Service::ssh::VERSION = '0.95';
+$App::Nopaste::Service::ssh::VERSION = '0.96';
 use base 'App::Nopaste::Service';
 use File::Temp;
 use File::Spec;
@@ -63,12 +63,17 @@ sub run {
 }
 
 1;
-
 __END__
+
+=pod
 
 =head1 NAME
 
 App::Nopaste::Service::ssh - copies files to your server using scp
+
+=head1 VERSION
+
+version 0.96
 
 =head1 AUTHOR
 
@@ -121,4 +126,3 @@ files won't run and defaults the character set to UTF-8 so browsers
 don't have to guess wrong.
 
 =cut
-

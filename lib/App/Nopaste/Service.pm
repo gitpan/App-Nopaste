@@ -4,7 +4,7 @@ package App::Nopaste::Service;
 BEGIN {
   $App::Nopaste::Service::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Service::VERSION = '0.95';
+$App::Nopaste::Service::VERSION = '0.96';
 use WWW::Mechanize;
 
 sub available         { 1 }
@@ -93,9 +93,18 @@ sub return {
     return (1, $link->url);
 }
 
+1;
+__END__
+
+=pod
+
 =head1 NAME
 
 App::Nopaste::Service - base class for nopaste services
+
+=head1 VERSION
+
+version 0.96
 
 =head1 SYNOPSIS
 
@@ -174,6 +183,3 @@ pasted text.
 Shawn M Moore, C<< <sartak at gmail.com> >>
 
 =cut
-
-1;
-

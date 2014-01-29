@@ -3,8 +3,12 @@ abstract: 'easy access to any pastebin'
 author:
   - 'Shawn M Moore, <sartak@gmail.com>'
 build_requires:
+  ExtUtils::MakeMaker: 0
+  File::Spec::Functions: 0
   LWP::Protocol: 0
+  List::Util: 0
   Test::More: 0
+  version: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
   Module::Build::Tiny: 0.034
@@ -42,40 +46,40 @@ optional_features:
 provides:
   App::Nopaste:
     file: lib/App/Nopaste.pm
-    version: 0.95
+    version: 0.96
   App::Nopaste::Command:
     file: lib/App/Nopaste/Command.pm
-    version: 0.95
+    version: 0.96
   App::Nopaste::Service:
     file: lib/App/Nopaste/Service.pm
-    version: 0.95
+    version: 0.96
   App::Nopaste::Service::Codepeek:
     file: lib/App/Nopaste/Service/Codepeek.pm
-    version: 0.95
+    version: 0.96
   App::Nopaste::Service::Debian:
     file: lib/App/Nopaste/Service/Debian.pm
-    version: 0.95
+    version: 0.96
   App::Nopaste::Service::Gist:
     file: lib/App/Nopaste/Service/Gist.pm
-    version: 0.95
+    version: 0.96
   App::Nopaste::Service::PastebinCom:
     file: lib/App/Nopaste/Service/PastebinCom.pm
-    version: 0.95
+    version: 0.96
   App::Nopaste::Service::Pastie:
     file: lib/App/Nopaste/Service/Pastie.pm
-    version: 0.95
+    version: 0.96
   App::Nopaste::Service::Shadowcat:
     file: lib/App/Nopaste/Service/Shadowcat.pm
-    version: 0.95
+    version: 0.96
   App::Nopaste::Service::Snitch:
     file: lib/App/Nopaste/Service/Snitch.pm
-    version: 0.95
+    version: 0.96
   App::Nopaste::Service::Ubuntu:
     file: lib/App/Nopaste/Service/Ubuntu.pm
-    version: 0.95
+    version: 0.96
   App::Nopaste::Service::ssh:
     file: lib/App/Nopaste/Service/ssh.pm
-    version: 0.95
+    version: 0.96
 recommends:
   Browser::Open: 0
   Clipboard: 0
@@ -85,22 +89,33 @@ recommends:
 requires:
   Class::Load: 0
   Exporter: 0
-  Getopt::Long::Descriptive: 0.090
+  File::Basename: 0
+  File::Spec: 0
+  File::Temp: 0
+  Getopt::Long::Descriptive: 0
   JSON: 0
   Module::Pluggable: 0
+  Module::Runtime: 0
+  POSIX: 0
   URI::Escape: 0
   WWW::Mechanize: 0
   base: 0
   perl: 5.008003
+  strict: 0
+  warnings: 0
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=App-Nopaste
   homepage: https://github.com/karenetheridge/App-Nopaste
   repository: https://github.com/karenetheridge/App-Nopaste.git
-version: 0.95
+version: 0.96
 x_Dist_Zilla:
   perl:
     version: 5.019007
   plugins:
+    -
+      class: Dist::Zilla::Plugin::PodVersion
+      name: PodVersion
+      version: 5.012
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: '@Author::ETHER/Git::NextVersion'
@@ -172,7 +187,7 @@ x_Dist_Zilla:
           dist: Dist-Zilla-PluginBundle-Author-ETHER
           encoding: UTF-8
           source_filename: CONTRIBUTING
-      name: '@Author::ETHER/GenerateFile::ShareDir'
+      name: '@Author::ETHER/generate CONTRIBUTING'
       version: 0.005
     -
       class: Dist::Zilla::Plugin::Test::Compile
@@ -295,6 +310,10 @@ x_Dist_Zilla:
       name: '@Author::ETHER/MetaConfig'
       version: 5.012
     -
+      class: Dist::Zilla::Plugin::AutoPrereqs
+      name: '@Author::ETHER/AutoPrereqs'
+      version: 5.012
+    -
       class: Dist::Zilla::Plugin::Prereqs::AuthorDeps
       name: '@Author::ETHER/Prereqs::AuthorDeps'
       version: 0.002
@@ -353,11 +372,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts
       name: '@Author::ETHER/Git::CheckFor::MergeConflicts'
-      version: 0.008
+      version: 0.009
     -
       class: Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch
       name: '@Author::ETHER/Git::CheckFor::CorrectBranch'
-      version: 0.008
+      version: 0.009
     -
       class: Dist::Zilla::Plugin::Git::Remote::Check
       name: '@Author::ETHER/Git::Remote::Check'
@@ -418,22 +437,6 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::ContributorsFromGit
       name: ContributorsFromGit
       version: 0.006
-    -
-      class: Dist::Zilla::Plugin::Prereqs
-      config:
-        Dist::Zilla::Plugin::Prereqs:
-          phase: runtime
-          type: requires
-      name: RuntimeRequires
-      version: 5.012
-    -
-      class: Dist::Zilla::Plugin::Prereqs
-      config:
-        Dist::Zilla::Plugin::Prereqs:
-          phase: test
-          type: requires
-      name: TestRequires
-      version: 5.012
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       config:

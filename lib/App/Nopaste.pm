@@ -4,8 +4,8 @@ package App::Nopaste;
 BEGIN {
   $App::Nopaste::AUTHORITY = 'cpan:SARTAK';
 }
-# git description: 0.94-3-g98eeedd
-$App::Nopaste::VERSION = '0.95';
+# git description: 0.95-4-g9d66c0b
+$App::Nopaste::VERSION = '0.96';
 
 use 5.008003;
 use Module::Pluggable search_path => 'App::Nopaste::Service';
@@ -84,12 +84,17 @@ sub nopaste {
 }
 
 1;
-
 __END__
+
+=pod
 
 =head1 NAME
 
 App::Nopaste - easy access to any pastebin
+
+=head1 VERSION
+
+version 0.96
 
 =head1 SYNOPSIS
 
@@ -175,10 +180,9 @@ Shawn M Moore, C<sartak@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2008-2010 Shawn M Moore.
+Copyright 2008- Shawn M Moore.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
 =cut
-

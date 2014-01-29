@@ -4,10 +4,11 @@ package App::Nopaste::Command;
 BEGIN {
   $App::Nopaste::Command::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Command::VERSION = '0.95';
+$App::Nopaste::Command::VERSION = '0.96';
 use Getopt::Long::Descriptive ();
 
 use App::Nopaste;
+use Module::Runtime 'use_module';
 
 sub new_with_options {
     my $class = shift;
@@ -112,13 +113,12 @@ sub run {
     my $url = App::Nopaste->nopaste(%args);
 
     if ($self->copy) {
-        require Clipboard;
-        Clipboard->import;
+        use_module('Clipboard')->import;
         Clipboard->copy($url);
     }
 
     if ($self->open_url) {
-        require Browser::Open;
+        use_module('Browser::Open');
         Browser::Open::open_browser($url);
     }
 
@@ -133,8 +133,7 @@ sub read_text {
     }
 
     if ($self->paste) {
-        require Clipboard;
-        Clipboard->import;
+        use_module('Clipboard')->import;
         return Clipboard->paste;
     }
 
@@ -144,14 +143,17 @@ sub read_text {
 }
 
 1;
-
 __END__
+
+=pod
 
 =head1 NAME
 
 App::Nopaste::Command - command-line utility for L<App::Nopaste>
 
-nopaste - command-line utility to nopaste
+=head1 VERSION
+
+version 0.96
 
 =head1 DESCRIPTION
 

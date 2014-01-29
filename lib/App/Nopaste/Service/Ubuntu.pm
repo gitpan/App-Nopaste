@@ -4,7 +4,7 @@ package App::Nopaste::Service::Ubuntu;
 BEGIN {
   $App::Nopaste::Service::Ubuntu::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Service::Ubuntu::VERSION = '0.95';
+$App::Nopaste::Service::Ubuntu::VERSION = '0.96';
 use base 'App::Nopaste::Service';
 
 my $languages = {
@@ -235,12 +235,17 @@ sub return {
 }
 
 1;
-
 __END__
+
+=pod
 
 =head1 NAME
 
 App::Nopaste::Service::Ubuntu - http://paste.ubuntu.com/
+
+=head1 VERSION
+
+version 0.96
 
 =head1 AUTHOR
 
@@ -250,4 +255,3 @@ gregor herrmann, C<< <gregoa@debian.org> >>
 Ryan Niebur, C<< <ryanryan52@gmail.com> >>)
 
 =cut
-

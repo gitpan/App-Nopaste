@@ -51,7 +51,7 @@ my $static_prereqs = do { my $x = {
                       },
        'develop' => {
                       'recommends' => {
-                                        'Dist::Zilla::PluginBundle::Author::ETHER' => '0.048'
+                                        'Dist::Zilla::PluginBundle::Author::ETHER' => '0.049'
                                       },
                       'requires' => {
                                       'Browser::Open' => '0',
@@ -63,7 +63,7 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::Plugin::MakeMaker::Fallback' => '0',
                                       'Dist::Zilla::Plugin::ModuleBuildTiny' => '0.004',
                                       'Dist::Zilla::Plugin::OptionalFeature' => '0',
-                                      'Dist::Zilla::Plugin::Prereqs' => '0',
+                                      'Dist::Zilla::Plugin::PodVersion' => '0',
                                       'Dist::Zilla::PluginBundle::Author::ETHER' => '0',
                                       'File::Spec' => '0',
                                       'File::Temp' => '0',
@@ -89,13 +89,20 @@ my $static_prereqs = do { my $x = {
                       'requires' => {
                                       'Class::Load' => '0',
                                       'Exporter' => '0',
-                                      'Getopt::Long::Descriptive' => '0.090',
+                                      'File::Basename' => '0',
+                                      'File::Spec' => '0',
+                                      'File::Temp' => '0',
+                                      'Getopt::Long::Descriptive' => '0',
                                       'JSON' => '0',
                                       'Module::Pluggable' => '0',
+                                      'Module::Runtime' => '0',
+                                      'POSIX' => '0',
                                       'URI::Escape' => '0',
                                       'WWW::Mechanize' => '0',
                                       'base' => '0',
-                                      'perl' => '5.008003'
+                                      'perl' => '5.008003',
+                                      'strict' => '0',
+                                      'warnings' => '0'
                                     }
                     },
        'test' => {
@@ -104,8 +111,12 @@ my $static_prereqs = do { my $x = {
                                      'CPAN::Meta::Requirements' => '2.120900'
                                    },
                    'requires' => {
+                                   'ExtUtils::MakeMaker' => '0',
+                                   'File::Spec::Functions' => '0',
                                    'LWP::Protocol' => '0',
-                                   'Test::More' => '0'
+                                   'List::Util' => '0',
+                                   'Test::More' => '0',
+                                   'version' => '0'
                                  }
                  }
      };

@@ -4,18 +4,19 @@ package App::Nopaste::Service::PastebinCom;
 BEGIN {
   $App::Nopaste::Service::PastebinCom::AUTHORITY = 'cpan:SARTAK';
 }
-$App::Nopaste::Service::PastebinCom::VERSION = '0.95';
+$App::Nopaste::Service::PastebinCom::VERSION = '0.96';
 use base 'App::Nopaste::Service';
+use Module::Runtime 'use_module';
 
 sub available {
-    eval "require WWW::Pastebin::PastebinCom::Create; 1"
+    eval { use_module('WWW::Pastebin::PastebinCom::Create'); 1 }
 }
 
 sub run {
     my $self = shift;
     my %args = @_;
 
-    require WWW::Pastebin::PastebinCom::Create;
+    use_module('WWW::Pastebin::PastebinCom::Create');
 
     $args{poster} = delete $args{nick} if defined $args{nick};
     $args{format} = delete $args{lang} if defined $args{lang};
@@ -31,16 +32,20 @@ sub run {
 }
 
 1;
-
 __END__
+
+=pod
 
 =head1 NAME
 
 App::Nopaste::Service::PastebinCom - http://pastebin.com/
+
+=head1 VERSION
+
+version 0.96
 
 =head1 SEE ALSO
 
 L<WWW::Pastebin::PastebinCom::Create>
 
 =cut
-

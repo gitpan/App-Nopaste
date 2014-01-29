@@ -84,18 +84,29 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Class::Load" => 0,
     "Exporter" => 0,
-    "Getopt::Long::Descriptive" => "0.090",
+    "File::Basename" => 0,
+    "File::Spec" => 0,
+    "File::Temp" => 0,
+    "Getopt::Long::Descriptive" => 0,
     "JSON" => 0,
     "Module::Pluggable" => 0,
+    "Module::Runtime" => 0,
+    "POSIX" => 0,
     "URI::Escape" => 0,
     "WWW::Mechanize" => 0,
-    "base" => 0
+    "base" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
   "TEST_REQUIRES" => {
+    "ExtUtils::MakeMaker" => 0,
+    "File::Spec::Functions" => 0,
     "LWP::Protocol" => 0,
-    "Test::More" => 0
+    "List::Util" => 0,
+    "Test::More" => 0,
+    "version" => 0
   },
-  "VERSION" => "0.95",
+  "VERSION" => "0.96",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -105,14 +116,25 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Class::Load" => 0,
   "Exporter" => 0,
-  "Getopt::Long::Descriptive" => "0.090",
+  "ExtUtils::MakeMaker" => 0,
+  "File::Basename" => 0,
+  "File::Spec" => 0,
+  "File::Spec::Functions" => 0,
+  "File::Temp" => 0,
+  "Getopt::Long::Descriptive" => 0,
   "JSON" => 0,
   "LWP::Protocol" => 0,
+  "List::Util" => 0,
   "Module::Pluggable" => 0,
+  "Module::Runtime" => 0,
+  "POSIX" => 0,
   "Test::More" => 0,
   "URI::Escape" => 0,
   "WWW::Mechanize" => 0,
-  "base" => 0
+  "base" => 0,
+  "strict" => 0,
+  "version" => 0,
+  "warnings" => 0
 );
 
 

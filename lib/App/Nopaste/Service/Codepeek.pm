@@ -1,10 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Codepeek;
-BEGIN {
-  $App::Nopaste::Service::Codepeek::AUTHORITY = 'cpan:SARTAK';
-}
-$App::Nopaste::Service::Codepeek::VERSION = '0.96';
+$App::Nopaste::Service::Codepeek::VERSION = '0.97';
 use base 'App::Nopaste::Service';
 
 sub uri { 'http://codepeek.com/paste' }
@@ -46,7 +43,7 @@ App::Nopaste::Service::Codepeek - http://codepeek.com
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =head1 AUTHOR
 

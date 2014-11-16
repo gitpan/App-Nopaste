@@ -1,10 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Shadowcat;
-BEGIN {
-  $App::Nopaste::Service::Shadowcat::AUTHORITY = 'cpan:SARTAK';
-}
-$App::Nopaste::Service::Shadowcat::VERSION = '0.96';
+$App::Nopaste::Service::Shadowcat::VERSION = '0.97';
 use base 'App::Nopaste::Service';
 
 sub available {
@@ -26,6 +23,6 @@ App::Nopaste::Service::Shadowcat - http://paste.scsys.co.uk/
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =cut

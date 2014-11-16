@@ -1,10 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Pastie;
-BEGIN {
-  $App::Nopaste::Service::Pastie::AUTHORITY = 'cpan:SARTAK';
-}
-$App::Nopaste::Service::Pastie::VERSION = '0.96';
+$App::Nopaste::Service::Pastie::VERSION = '0.97';
 use base 'App::Nopaste::Service';
 
 my %languages = (
@@ -106,6 +103,6 @@ App::Nopaste::Service::Pastie - http://pastie.org
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =cut

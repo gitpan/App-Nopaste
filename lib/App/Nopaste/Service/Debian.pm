@@ -1,10 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Debian;
-BEGIN {
-  $App::Nopaste::Service::Debian::AUTHORITY = 'cpan:SARTAK';
-}
-$App::Nopaste::Service::Debian::VERSION = '0.96';
+$App::Nopaste::Service::Debian::VERSION = '0.97';
 use base 'App::Nopaste::Service';
 
 my $languages = {
@@ -281,13 +278,15 @@ __END__
 
 =pod
 
+=for stopwords Niebur
+
 =head1 NAME
 
 App::Nopaste::Service::Debian - http://paste.debian.net/
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =head1 AUTHOR
 

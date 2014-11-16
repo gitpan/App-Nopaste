@@ -1,15 +1,13 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Gist;
-BEGIN {
-  $App::Nopaste::Service::Gist::AUTHORITY = 'cpan:SARTAK';
-}
-$App::Nopaste::Service::Gist::VERSION = '0.96';
+$App::Nopaste::Service::Gist::VERSION = '0.97';
 use base 'App::Nopaste::Service';
 
 use File::Basename ();
-use JSON ();
+use JSON::MaybeXS;
 use Module::Runtime 'use_module';
+use namespace::clean;
 
 sub available         { 1 }
 sub forbid_in_default { 0 }
@@ -38,7 +36,7 @@ sub run {
         }
     };
 
-    $content = JSON::encode_json($content);
+    $content = encode_json($content);
 
     my %auth = $self->_get_auth;
 
@@ -78,7 +76,7 @@ sub _get_auth {
 
     die join("\n",
         "Export GITHUB_OAUTH_TOKEN first. For example:",
-        "    perl -Ilib -MApp::Nopaste::Service::Gist -e 'App::Nopaste::Service::Gist->create_token'",
+        "    perl -MApp::Nopaste::Service::Gist -e 'App::Nopaste::Service::Gist->create_token'",
         "",
         "OR you can export GITHUB_USER and GITHUB_PASSWORD.",
     ) . "\n";
@@ -106,11 +104,11 @@ sub create_token {
 
     my $request = HTTP::Request->new(POST => 'https://api.github.com/authorizations');
     $request->authorization_basic($username, $password);
-    $request->content(JSON::encode_json($parameters));
+    $request->content(encode_json($parameters));
 
     my $response = $ua->request($request);
 
-    my $response_content = JSON::decode_json($response->decoded_content);
+    my $response_content = decode_json($response->decoded_content);
 
     if ($response_content->{token} ) {
         print "GITHUB_OAUTH_TOKEN=$response_content->{token}\n";
@@ -135,7 +133,7 @@ sub return {
       return (0, "LWP Error: " . $res->content);
     }
 
-    my $id = JSON::decode_json($res->content)->{id};
+    my $id = decode_json($res->content)->{id};
 
     return (0, "Could not find paste link.") if !$id;
     return (1, "http://gist.github.com/$id");
@@ -146,13 +144,15 @@ __END__
 
 =pod
 
+=for stopwords SIGNES gists oauth
+
 =head1 NAME
 
 App::Nopaste::Service::Gist - http://gist.github.com/
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =head1 GitHub Authorization
 

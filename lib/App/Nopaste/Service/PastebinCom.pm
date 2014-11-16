@@ -1,12 +1,10 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::PastebinCom;
-BEGIN {
-  $App::Nopaste::Service::PastebinCom::AUTHORITY = 'cpan:SARTAK';
-}
-$App::Nopaste::Service::PastebinCom::VERSION = '0.96';
+$App::Nopaste::Service::PastebinCom::VERSION = '0.97';
 use base 'App::Nopaste::Service';
 use Module::Runtime 'use_module';
+use namespace::clean;
 
 sub available {
     eval { use_module('WWW::Pastebin::PastebinCom::Create'); 1 }
@@ -42,7 +40,7 @@ App::Nopaste::Service::PastebinCom - http://pastebin.com/
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =head1 SEE ALSO
 

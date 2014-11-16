@@ -1,14 +1,12 @@
 use strict;
 use warnings;
 package App::Nopaste::Command;
-BEGIN {
-  $App::Nopaste::Command::AUTHORITY = 'cpan:SARTAK';
-}
-$App::Nopaste::Command::VERSION = '0.96';
+$App::Nopaste::Command::VERSION = '0.97';
 use Getopt::Long::Descriptive ();
 
 use App::Nopaste;
 use Module::Runtime 'use_module';
+use namespace::clean;
 
 sub new_with_options {
     my $class = shift;
@@ -147,13 +145,15 @@ __END__
 
 =pod
 
+=for stopwords chan desc lang nopaste pastebot
+
 =head1 NAME
 
 App::Nopaste::Command - command-line utility for L<App::Nopaste>
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =head1 DESCRIPTION
 

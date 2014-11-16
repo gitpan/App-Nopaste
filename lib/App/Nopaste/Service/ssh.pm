@@ -1,15 +1,13 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::ssh;
-BEGIN {
-  $App::Nopaste::Service::ssh::AUTHORITY = 'cpan:SARTAK';
-}
-$App::Nopaste::Service::ssh::VERSION = '0.96';
+$App::Nopaste::Service::ssh::VERSION = '0.97';
 use base 'App::Nopaste::Service';
 use File::Temp;
 use File::Spec;
 use POSIX qw(strftime);
 use URI::Escape qw(uri_escape);
+use namespace::clean;
 
 sub run {
     my ($self, %args) = @_;
@@ -30,7 +28,7 @@ sub run {
     my $suffix = $ext;
     if ($usedesc) {
         if (not $args{'desc'}) {
-            my ($vol, $dirs, $file) = File::Spec->splitpath($source);
+            my $file = ( File::Spec->splitpath($source) )[2];
             $args{'desc'} = $file || '';
         }
         $args{'desc'} =~ s/\s+/+/g; # more readable than %20
@@ -55,7 +53,7 @@ sub run {
 
     system('scp', '-pq', $filename, "$server:$docroot");
 
-    my ($volume, $dir, $file) = File::Spec->splitpath($filename);
+    my $file = ( File::Spec->splitpath($filename) )[2];
     $file = uri_escape($file);
     $file =~ s/%2b/+/gi;
 
@@ -67,13 +65,15 @@ __END__
 
 =pod
 
+=for stopwords dir
+
 =head1 NAME
 
 App::Nopaste::Service::ssh - copies files to your server using scp
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =head1 AUTHOR
 

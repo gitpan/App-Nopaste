@@ -1,10 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service;
-BEGIN {
-  $App::Nopaste::Service::AUTHORITY = 'cpan:SARTAK';
-}
-$App::Nopaste::Service::VERSION = '0.96';
+$App::Nopaste::Service::VERSION = '0.97';
 use WWW::Mechanize;
 
 sub available         { 1 }
@@ -98,13 +95,15 @@ __END__
 
 =pod
 
+=for stopwords pastebot XXX chan desc lang mech nopaste canonicalization
+
 =head1 NAME
 
 App::Nopaste::Service - base class for nopaste services
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =head1 SYNOPSIS
 

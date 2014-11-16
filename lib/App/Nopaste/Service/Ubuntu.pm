@@ -1,10 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Ubuntu;
-BEGIN {
-  $App::Nopaste::Service::Ubuntu::AUTHORITY = 'cpan:SARTAK';
-}
-$App::Nopaste::Service::Ubuntu::VERSION = '0.96';
+$App::Nopaste::Service::Ubuntu::VERSION = '0.97';
 use base 'App::Nopaste::Service';
 
 my $languages = {
@@ -239,13 +236,15 @@ __END__
 
 =pod
 
+=for stopwords Niebur
+
 =head1 NAME
 
 App::Nopaste::Service::Ubuntu - http://paste.ubuntu.com/
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =head1 AUTHOR
 

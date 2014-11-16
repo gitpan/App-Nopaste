@@ -1,15 +1,13 @@
 use strict;
 use warnings;
 package App::Nopaste;
-BEGIN {
-  $App::Nopaste::AUTHORITY = 'cpan:SARTAK';
-}
-# git description: 0.95-4-g9d66c0b
-$App::Nopaste::VERSION = '0.96';
+# git description: 0.96-13-gf396393
+$App::Nopaste::VERSION = '0.97';
 
 use 5.008003;
 use Module::Pluggable search_path => 'App::Nopaste::Service';
 use Class::Load 'load_class';
+use namespace::clean;
 
 use base 'Exporter';
 our @EXPORT_OK = 'nopaste';
@@ -88,13 +86,15 @@ __END__
 
 =pod
 
+=for stopwords nopaste pastebin
+
 =head1 NAME
 
-App::Nopaste - easy access to any pastebin
+App::Nopaste - Easy access to any pastebin
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =head1 SYNOPSIS
 

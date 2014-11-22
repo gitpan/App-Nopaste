@@ -4,7 +4,7 @@
       "Shawn M Moore, <sartak@gmail.com>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Dist::Zilla version 5.025, CPAN::Meta::Converter version 2.142690",
+   "generated_by" : "Dist::Zilla version 5.025, CPAN::Meta::Converter version 2.143240",
    "license" : [
       "perl_5"
    ],
@@ -20,23 +20,23 @@
       ]
    },
    "optional_features" : {
-      "Clipboard" : {
-         "description" : "copying of URLs with -x/--copy",
+      "browser" : {
+         "description" : "opening of URLs in a browser with --open_url/--open/-o",
          "prereqs" : {
             "runtime" : {
                "requires" : {
-                  "Clipboard" : "0"
+                  "Browser::Open" : "0"
                }
             }
          },
          "x_default" : "0"
       },
-      "browser" : {
-         "description" : "open URLs in a browser",
+      "clipboard" : {
+         "description" : "copying of URLs with -x/--copy",
          "prereqs" : {
             "runtime" : {
                "requires" : {
-                  "Browser::Open" : "0"
+                  "Clipboard" : "0"
                }
             }
          },
@@ -52,18 +52,6 @@
             }
          },
          "x_default" : "0"
-      },
-      "scp" : {
-         "description" : "copy files to remote server with scp",
-         "prereqs" : {
-            "runtime" : {
-               "requires" : {
-                  "File::Spec" : "0",
-                  "File::Temp" : "0"
-               }
-            }
-         },
-         "x_default" : "1"
       }
    },
    "prereqs" : {
@@ -75,7 +63,7 @@
       },
       "develop" : {
          "recommends" : {
-            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.079"
+            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.080"
          },
          "requires" : {
             "Browser::Open" : "0",
@@ -149,7 +137,6 @@
             "Dist::Zilla::Plugin::UploadToCPAN" : "0",
             "Dist::Zilla::PluginBundle::Author::ETHER" : "0.076",
             "File::Spec" : "0",
-            "File::Temp" : "0",
             "IO::Handle" : "0",
             "IPC::Open3" : "0",
             "Test::CPAN::Changes" : "0.19",
@@ -168,8 +155,6 @@
          "recommends" : {
             "Browser::Open" : "0",
             "Clipboard" : "0",
-            "File::Spec" : "0",
-            "File::Temp" : "0",
             "WWW::Pastebin::PastebinCom::Create" : "1.003"
          },
          "requires" : {
@@ -208,51 +193,51 @@
    "provides" : {
       "App::Nopaste" : {
          "file" : "lib/App/Nopaste.pm",
-         "version" : "0.97"
+         "version" : "0.98"
       },
       "App::Nopaste::Command" : {
          "file" : "lib/App/Nopaste/Command.pm",
-         "version" : "0.97"
+         "version" : "0.98"
       },
       "App::Nopaste::Service" : {
          "file" : "lib/App/Nopaste/Service.pm",
-         "version" : "0.97"
+         "version" : "0.98"
       },
       "App::Nopaste::Service::Codepeek" : {
          "file" : "lib/App/Nopaste/Service/Codepeek.pm",
-         "version" : "0.97"
+         "version" : "0.98"
       },
       "App::Nopaste::Service::Debian" : {
          "file" : "lib/App/Nopaste/Service/Debian.pm",
-         "version" : "0.97"
+         "version" : "0.98"
       },
       "App::Nopaste::Service::Gist" : {
          "file" : "lib/App/Nopaste/Service/Gist.pm",
-         "version" : "0.97"
+         "version" : "0.98"
       },
       "App::Nopaste::Service::PastebinCom" : {
          "file" : "lib/App/Nopaste/Service/PastebinCom.pm",
-         "version" : "0.97"
+         "version" : "0.98"
       },
       "App::Nopaste::Service::Pastie" : {
          "file" : "lib/App/Nopaste/Service/Pastie.pm",
-         "version" : "0.97"
+         "version" : "0.98"
       },
       "App::Nopaste::Service::Shadowcat" : {
          "file" : "lib/App/Nopaste/Service/Shadowcat.pm",
-         "version" : "0.97"
+         "version" : "0.98"
       },
       "App::Nopaste::Service::Snitch" : {
          "file" : "lib/App/Nopaste/Service/Snitch.pm",
-         "version" : "0.97"
+         "version" : "0.98"
       },
       "App::Nopaste::Service::Ubuntu" : {
          "file" : "lib/App/Nopaste/Service/Ubuntu.pm",
-         "version" : "0.97"
+         "version" : "0.98"
       },
       "App::Nopaste::Service::ssh" : {
          "file" : "lib/App/Nopaste/Service/ssh.pm",
-         "version" : "0.97"
+         "version" : "0.98"
       }
    },
    "release_status" : "stable",
@@ -268,7 +253,7 @@
          "web" : "https://github.com/karenetheridge/App-Nopaste"
       }
    },
-   "version" : "0.97",
+   "version" : "0.98",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.021005"
@@ -319,7 +304,7 @@
                }
             },
             "name" : "@Author::ETHER/stale modules, build",
-            "version" : "0.030"
+            "version" : "0.032"
          },
          {
             "class" : "Dist::Zilla::Plugin::PromptIfStale",
@@ -333,7 +318,7 @@
                }
             },
             "name" : "@Author::ETHER/stale modules, release",
-            "version" : "0.030"
+            "version" : "0.032"
          },
          {
             "class" : "Dist::Zilla::Plugin::ExecDir",
@@ -474,7 +459,7 @@
                }
             },
             "name" : "@Author::ETHER/Test::EOL",
-            "version" : "0.15"
+            "version" : "0.16"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaTests",
@@ -678,7 +663,7 @@
                }
             },
             "name" : "@Author::ETHER/RunExtraTests",
-            "version" : "0.024"
+            "version" : "0.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::CheckSelfDependency",
@@ -767,7 +752,7 @@
          {
             "class" : "Dist::Zilla::Plugin::CheckPrereqsIndexed",
             "name" : "@Author::ETHER/CheckPrereqsIndexed",
-            "version" : "0.012"
+            "version" : "0.013"
          },
          {
             "class" : "Dist::Zilla::Plugin::TestRelease",
@@ -795,7 +780,7 @@
          {
             "class" : "Dist::Zilla::Plugin::CheckIssues",
             "name" : "@Author::ETHER/CheckIssues",
-            "version" : "0.004"
+            "version" : "0.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
@@ -862,7 +847,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.97",
+                  "tag" : "0.98",
                   "tag_format" : "%v%t",
                   "tag_message" : "v%v%t",
                   "time_zone" : "local"
@@ -944,11 +929,11 @@
                }
             },
             "name" : "pastebin",
-            "version" : "0.018"
+            "version" : "0.019"
          },
          {
             "class" : "Dist::Zilla::Plugin::DynamicPrereqs",
-            "name" : "via OptionalFeature (Clipboard)",
+            "name" : "via OptionalFeature (clipboard)",
             "version" : "0.008"
          },
          {
@@ -958,7 +943,7 @@
                   "always_recommend" : "1",
                   "default" : "0",
                   "description" : "copying of URLs with -x/--copy",
-                  "name" : "Clipboard",
+                  "name" : "clipboard",
                   "phase" : "runtime",
                   "prereqs" : {
                      "Clipboard" : "0"
@@ -968,34 +953,8 @@
                   "type" : "requires"
                }
             },
-            "name" : "Clipboard",
-            "version" : "0.018"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::DynamicPrereqs",
-            "name" : "via OptionalFeature (scp)",
-            "version" : "0.008"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::OptionalFeature",
-            "config" : {
-               "Dist::Zilla::Plugin::OptionalFeature" : {
-                  "always_recommend" : "1",
-                  "default" : "1",
-                  "description" : "copy files to remote server with scp",
-                  "name" : "scp",
-                  "phase" : "runtime",
-                  "prereqs" : {
-                     "File::Spec" : "0",
-                     "File::Temp" : "0"
-                  },
-                  "prompt" : "1",
-                  "require_develop" : "1",
-                  "type" : "requires"
-               }
-            },
-            "name" : "scp",
-            "version" : "0.018"
+            "name" : "clipboard",
+            "version" : "0.019"
          },
          {
             "class" : "Dist::Zilla::Plugin::DynamicPrereqs",
@@ -1008,7 +967,7 @@
                "Dist::Zilla::Plugin::OptionalFeature" : {
                   "always_recommend" : "1",
                   "default" : "0",
-                  "description" : "open URLs in a browser",
+                  "description" : "opening of URLs in a browser with --open_url/--open/-o",
                   "name" : "browser",
                   "phase" : "runtime",
                   "prereqs" : {
@@ -1020,7 +979,7 @@
                }
             },
             "name" : "browser",
-            "version" : "0.018"
+            "version" : "0.019"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

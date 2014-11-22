@@ -46,7 +46,7 @@ my %WriteMakefileArgs = (
     "LWP::Protocol" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.97",
+  "VERSION" => "0.98",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -76,26 +76,19 @@ my %FallbackPrereqs = (
 );
 
 # inserted by Dist::Zilla::Plugin::DynamicPrereqs 0.008
-if (prompt('install browser (open URLs in a browser)? [y/N]', 'N') =~ /^y/i) {
+if (prompt('install opening of URLs in a browser with --open_url/--open/-o? [y/N]', 'N') =~ /^y/i) {
   $WriteMakefileArgs{PREREQ_PM}{'Browser::Open'} = $FallbackPrereqs{'Browser::Open'} = '0';
 }
 
 
 # inserted by Dist::Zilla::Plugin::DynamicPrereqs 0.008
-if (prompt('install scp (copy files to remote server with scp)? [Y/n]', 'Y') =~ /^y/i) {
-  $WriteMakefileArgs{PREREQ_PM}{'File::Spec'} = $FallbackPrereqs{'File::Spec'} = '0';
-  $WriteMakefileArgs{PREREQ_PM}{'File::Temp'} = $FallbackPrereqs{'File::Temp'} = '0';
-}
-
-
-# inserted by Dist::Zilla::Plugin::DynamicPrereqs 0.008
-if (prompt('install Clipboard (copying of URLs with -x/--copy)? [y/N]', 'N') =~ /^y/i) {
+if (prompt('install copying of URLs with -x/--copy? [y/N]', 'N') =~ /^y/i) {
   $WriteMakefileArgs{PREREQ_PM}{'Clipboard'} = $FallbackPrereqs{'Clipboard'} = '0';
 }
 
 
 # inserted by Dist::Zilla::Plugin::DynamicPrereqs 0.008
-if (prompt('install pastebin (pastebin.com support)? [y/N]', 'N') =~ /^y/i) {
+if (prompt('install pastebin.com support? [y/N]', 'N') =~ /^y/i) {
   $WriteMakefileArgs{PREREQ_PM}{'WWW::Pastebin::PastebinCom::Create'} = $FallbackPrereqs{'WWW::Pastebin::PastebinCom::Create'} = '1.003';
 }
 

@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Command;
-$App::Nopaste::Command::VERSION = '0.97';
+$App::Nopaste::Command::VERSION = '0.98';
 use Getopt::Long::Descriptive ();
 
 use App::Nopaste;
@@ -153,7 +153,7 @@ App::Nopaste::Command - command-line utility for L<App::Nopaste>
 
 =head1 VERSION
 
-version 0.97
+version 0.98
 
 =head1 DESCRIPTION
 

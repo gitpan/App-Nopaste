@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 package App::Nopaste;
-# git description: 0.96-13-gf396393
-$App::Nopaste::VERSION = '0.97';
+# git description: 0.97-2-gfa40037
+$App::Nopaste::VERSION = '0.98';
 
 use 5.008003;
 use Module::Pluggable search_path => 'App::Nopaste::Service';
@@ -94,7 +94,7 @@ App::Nopaste - Easy access to any pastebin
 
 =head1 VERSION
 
-version 0.97
+version 0.98
 
 =head1 SYNOPSIS
 

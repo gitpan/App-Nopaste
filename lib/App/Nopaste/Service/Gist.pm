@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Gist;
-$App::Nopaste::Service::Gist::VERSION = '0.98';
+{ our $VERSION = '0.99'; }
 use base 'App::Nopaste::Service';
 
 use File::Basename ();
@@ -136,7 +136,7 @@ sub return {
     my $id = decode_json($res->content)->{id};
 
     return (0, "Could not find paste link.") if !$id;
-    return (1, "http://gist.github.com/$id");
+    return (1, "https://gist.github.com/$id");
 }
 
 1;
@@ -152,7 +152,7 @@ App::Nopaste::Service::Gist - http://gist.github.com/
 
 =head1 VERSION
 
-version 0.98
+version 0.99
 
 =head1 GitHub Authorization
 

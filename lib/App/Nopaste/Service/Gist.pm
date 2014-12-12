@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Gist;
-{ our $VERSION = '0.99'; }
+{ our $VERSION = '1.000'; }
 use base 'App::Nopaste::Service';
 
 use File::Basename ();
@@ -152,7 +152,7 @@ App::Nopaste::Service::Gist - http://gist.github.com/
 
 =head1 VERSION
 
-version 0.99
+version 1.000
 
 =head1 GitHub Authorization
 

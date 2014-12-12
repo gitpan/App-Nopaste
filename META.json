@@ -193,51 +193,51 @@
    "provides" : {
       "App::Nopaste" : {
          "file" : "lib/App/Nopaste.pm",
-         "version" : "0.99"
+         "version" : "1.000"
       },
       "App::Nopaste::Command" : {
          "file" : "lib/App/Nopaste/Command.pm",
-         "version" : "0.99"
+         "version" : "1.000"
       },
       "App::Nopaste::Service" : {
          "file" : "lib/App/Nopaste/Service.pm",
-         "version" : "0.99"
+         "version" : "1.000"
       },
       "App::Nopaste::Service::Codepeek" : {
          "file" : "lib/App/Nopaste/Service/Codepeek.pm",
-         "version" : "0.99"
+         "version" : "1.000"
       },
       "App::Nopaste::Service::Debian" : {
          "file" : "lib/App/Nopaste/Service/Debian.pm",
-         "version" : "0.99"
+         "version" : "1.000"
       },
       "App::Nopaste::Service::Gist" : {
          "file" : "lib/App/Nopaste/Service/Gist.pm",
-         "version" : "0.99"
+         "version" : "1.000"
       },
       "App::Nopaste::Service::PastebinCom" : {
          "file" : "lib/App/Nopaste/Service/PastebinCom.pm",
-         "version" : "0.99"
+         "version" : "1.000"
       },
       "App::Nopaste::Service::Pastie" : {
          "file" : "lib/App/Nopaste/Service/Pastie.pm",
-         "version" : "0.99"
+         "version" : "1.000"
       },
       "App::Nopaste::Service::Shadowcat" : {
          "file" : "lib/App/Nopaste/Service/Shadowcat.pm",
-         "version" : "0.99"
+         "version" : "1.000"
       },
       "App::Nopaste::Service::Snitch" : {
          "file" : "lib/App/Nopaste/Service/Snitch.pm",
-         "version" : "0.99"
+         "version" : "1.000"
       },
       "App::Nopaste::Service::Ubuntu" : {
          "file" : "lib/App/Nopaste/Service/Ubuntu.pm",
-         "version" : "0.99"
+         "version" : "1.000"
       },
       "App::Nopaste::Service::ssh" : {
          "file" : "lib/App/Nopaste/Service/ssh.pm",
-         "version" : "0.99"
+         "version" : "1.000"
       }
    },
    "release_status" : "stable",
@@ -253,7 +253,7 @@
          "web" : "https://github.com/karenetheridge/App-Nopaste"
       }
    },
-   "version" : "0.99",
+   "version" : "1.000",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.021005"
@@ -588,7 +588,7 @@
                }
             },
             "name" : "@Author::ETHER/MetaProvides::Package",
-            "version" : "2.001002"
+            "version" : "2.001003"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
@@ -846,7 +846,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.99",
+                  "tag" : "1.000",
                   "tag_format" : "%v%t",
                   "tag_message" : "v%v%t",
                   "time_zone" : "local"
@@ -1039,10 +1039,12 @@
       "Rafael Kitover <rkitover@cpan.org>",
       "Sergey Romanov <complefor@rambler.ru>",
       "Jesse Luehrs <doy@tozt.net>",
+      "Сергей Романов <sromanov@cpan.org>",
       "Arthur Axel 'fREW' Schmidt <frioux@gmail.com>",
       "יובל קוג'מן (Yuval Kogman) <nothingmuch@woobling.org>",
       "Darian Anthony Patrick <dap@darianpatrick.com>",
       "David Bremner <bremner@unb.ca>",
+      "Dean Hamstead <dean@fragfest.com.au>",
       "Graham Knop <haarg@haarg.org>",
       "Jason Mills <jmmills@cpan.org>",
       "John Goulah <jgoulah@gmail.com>",
@@ -1050,8 +1052,7 @@
       "Sebastian Paaske Tørholm <Eckankar+github@gmail.com>",
       "gregor herrmann <gregoa@debian.org>",
       "vti <viacheslav.t@gmail.com>",
-      "Ævar Arnfjörð Bjarmason <avarab@gmail.com>",
-      "Сергей Романов <sromanov@cpan.org>"
+      "Ævar Arnfjörð Bjarmason <avarab@gmail.com>"
    ],
    "x_permissions_from_module" : "App::Nopaste"
 }

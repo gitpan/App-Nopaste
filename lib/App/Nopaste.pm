@@ -1,16 +1,18 @@
 use strict;
 use warnings;
 package App::Nopaste;
-# git description: 0.98-6-g157ba5a
-{ our $VERSION = '0.99'; }
+# git description: 0.99-6-g310d889
+{ our $VERSION = '1.000'; }
 
 use 5.008003;
-use Module::Pluggable search_path => 'App::Nopaste::Service';
+use Module::Pluggable search_path => 'App::Nopaste::Service', sub_name => '_plugins';
 use Class::Load 'load_class';
 use namespace::clean;
 
 use base 'Exporter';
 our @EXPORT_OK = 'nopaste';
+
+sub plugins { goto \&_plugins };
 
 sub nopaste {
     # process arguments
@@ -94,7 +96,7 @@ App::Nopaste - Easy access to any pastebin
 
 =head1 VERSION
 
-version 0.99
+version 1.000
 
 =head1 SYNOPSIS
 

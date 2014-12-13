@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Pastie;
-{ our $VERSION = '1.000'; }
+{ our $VERSION = '1.001'; }
 use base 'App::Nopaste::Service';
 
 my %languages = (
@@ -103,6 +103,6 @@ App::Nopaste::Service::Pastie - http://pastie.org
 
 =head1 VERSION
 
-version 1.000
+version 1.001
 
 =cut

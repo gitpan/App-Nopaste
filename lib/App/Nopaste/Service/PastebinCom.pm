@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::PastebinCom;
-{ our $VERSION = '1.000'; }
+{ our $VERSION = '1.001'; }
 use base 'App::Nopaste::Service';
 use Module::Runtime 'use_module';
 use namespace::clean;
@@ -40,7 +40,7 @@ App::Nopaste::Service::PastebinCom - http://pastebin.com/
 
 =head1 VERSION
 
-version 1.000
+version 1.001
 
 =head1 SEE ALSO
 

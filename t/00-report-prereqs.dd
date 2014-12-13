@@ -129,6 +129,7 @@ do { my $x = {
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec' => '0',
                                    'LWP::Protocol' => '0',
+                                   'Test::Deep' => '0',
                                    'Test::More' => '0',
                                    'perl' => '5.008003'
                                  }

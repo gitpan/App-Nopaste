@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Debian;
-{ our $VERSION = '1.001'; }
+{ our $VERSION = '1.002'; }
 use base 'App::Nopaste::Service';
 
 my $languages = {
@@ -286,7 +286,7 @@ App::Nopaste::Service::Debian - http://paste.debian.net/
 
 =head1 VERSION
 
-version 1.001
+version 1.002
 
 =head1 AUTHOR
 

@@ -13,7 +13,7 @@ configure_requires:
   ExtUtils::MakeMaker: '0'
   perl: '5.008003'
 dynamic_config: 1
-generated_by: 'Dist::Zilla version 5.028, CPAN::Meta::Converter version 2.143240'
+generated_by: 'Dist::Zilla version 5.029, CPAN::Meta::Converter version 2.143240'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -39,40 +39,43 @@ optional_features:
 provides:
   App::Nopaste:
     file: lib/App/Nopaste.pm
-    version: '1.001'
+    version: '1.002'
   App::Nopaste::Command:
     file: lib/App/Nopaste/Command.pm
-    version: '1.001'
+    version: '1.002'
   App::Nopaste::Service:
     file: lib/App/Nopaste/Service.pm
-    version: '1.001'
+    version: '1.002'
   App::Nopaste::Service::Codepeek:
     file: lib/App/Nopaste/Service/Codepeek.pm
-    version: '1.001'
+    version: '1.002'
   App::Nopaste::Service::Debian:
     file: lib/App/Nopaste/Service/Debian.pm
-    version: '1.001'
+    version: '1.002'
   App::Nopaste::Service::Gist:
     file: lib/App/Nopaste/Service/Gist.pm
-    version: '1.001'
+    version: '1.002'
+  App::Nopaste::Service::Mojopaste:
+    file: lib/App/Nopaste/Service/Mojopaste.pm
+    version: '1.002'
   App::Nopaste::Service::PastebinCom:
     file: lib/App/Nopaste/Service/PastebinCom.pm
-    version: '1.001'
+    version: '1.002'
   App::Nopaste::Service::Pastie:
     file: lib/App/Nopaste/Service/Pastie.pm
-    version: '1.001'
+    version: '1.002'
   App::Nopaste::Service::Shadowcat:
     file: lib/App/Nopaste/Service/Shadowcat.pm
-    version: '1.001'
+    version: '1.002'
   App::Nopaste::Service::Snitch:
     file: lib/App/Nopaste/Service/Snitch.pm
-    version: '1.001'
+    version: '1.002'
   App::Nopaste::Service::Ubuntu:
     file: lib/App/Nopaste/Service/Ubuntu.pm
-    version: '1.001'
+    version: '1.002'
   App::Nopaste::Service::ssh:
     file: lib/App/Nopaste/Service/ssh.pm
-    version: '1.001'
+    version: '1.002'
 recommends:
   Browser::Open: '0'
   Clipboard: '0'
@@ -99,7 +102,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=App-Nopaste
   homepage: https://github.com/karenetheridge/App-Nopaste
   repository: https://github.com/karenetheridge/App-Nopaste.git
-version: '1.001'
+version: '1.002'
 x_Dist_Zilla:
   perl:
     version: '5.021006'
@@ -107,7 +110,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::PodVersion
       name: PodVersion
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::Prereqs
       config:
@@ -115,7 +118,7 @@ x_Dist_Zilla:
           phase: develop
           type: requires
       name: '@Author::ETHER/bundle_plugins'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       config:
@@ -153,19 +156,19 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::ExecDir
       name: '@Author::ETHER/ExecDir'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::ShareDir
       name: '@Author::ETHER/ShareDir'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::FileFinder::ByName
       name: '@Author::ETHER/Examples'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::FileFinder::ByName
       name: '@Author::ETHER/ExtraTestFiles'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::Git::GatherDir
       config:
@@ -189,23 +192,23 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MetaYAML
       name: '@Author::ETHER/MetaYAML'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::MetaJSON
       name: '@Author::ETHER/MetaJSON'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::License
       name: '@Author::ETHER/License'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::Readme
       name: '@Author::ETHER/Readme'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::Manifest
       name: '@Author::ETHER/Manifest'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::GenerateFile::ShareDir
       config:
@@ -262,7 +265,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MetaTests
       name: '@Author::ETHER/MetaTests'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::Test::CPAN::Changes
       name: '@Author::ETHER/Test::CPAN::Changes'
@@ -278,7 +281,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::PodSyntaxTests
       name: '@Author::ETHER/PodSyntaxTests'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::Test::PodSpelling
       name: '@Author::ETHER/Test::PodSpelling'
@@ -304,17 +307,17 @@ x_Dist_Zilla:
       name: '@Author::ETHER/Test::Portability'
       version: '2.000005'
     -
+      class: Dist::Zilla::Plugin::PkgVersion
+      name: '@Author::ETHER/PkgVersion'
+      version: '5.029'
+    -
       class: Dist::Zilla::Plugin::Git::Describe
       name: '@Author::ETHER/Git::Describe'
       version: '0.003'
     -
-      class: Dist::Zilla::Plugin::PkgVersion
-      name: '@Author::ETHER/PkgVersion'
-      version: '5.028'
-    -
       class: Dist::Zilla::Plugin::NextRelease
       name: '@Author::ETHER/NextRelease'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::ReadmeAnyFromPod
       name: '@Author::ETHER/ReadmeAnyFromPod'
@@ -341,7 +344,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MetaNoIndex
       name: '@Author::ETHER/MetaNoIndex'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::MetaProvides::Package
       config:
@@ -352,7 +355,7 @@ x_Dist_Zilla:
             -
               class: Dist::Zilla::Plugin::FinderCode
               name: ':InstallModules'
-              version: '5.028'
+              version: '5.029'
         Dist::Zilla::Role::MetaProvider::Provider:
           inherit_missing: '1'
           inherit_version: '1'
@@ -362,7 +365,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MetaConfig
       name: '@Author::ETHER/MetaConfig'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::Keywords
       config:
@@ -383,7 +386,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::AutoPrereqs
       name: '@Author::ETHER/AutoPrereqs'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::Prereqs::AuthorDeps
       name: '@Author::ETHER/Prereqs::AuthorDeps'
@@ -399,14 +402,14 @@ x_Dist_Zilla:
           phase: develop
           type: recommends
       name: '@Author::ETHER/pluginbundle_version'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::MakeMaker
       config:
         Dist::Zilla::Role::TestRunner:
           default_jobs: 9
       name: '@Author::ETHER/MakeMaker'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::RunExtraTests
       config:
@@ -480,7 +483,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::TestRelease
       name: '@Author::ETHER/TestRelease'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::Git::Check
       config:
@@ -501,7 +504,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::UploadToCPAN
       name: '@Author::ETHER/UploadToCPAN'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::CopyFilesFromRelease
       config:
@@ -547,7 +550,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: '1.001'
+          tag: '1.002'
           tag_format: '%v%t'
           tag_message: v%v%t
           time_zone: local
@@ -580,7 +583,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::ConfirmRelease
       name: '@Author::ETHER/ConfirmRelease'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::Test::CleanNamespaces
       config:
@@ -640,35 +643,35 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':IncModules'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':TestFiles'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':ExecFiles'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':ShareFiles'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':MainModule'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':AllFiles'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':NoFiles'
-      version: '5.028'
+      version: '5.029'
     -
       class: Dist::Zilla::Plugin::VerifyPhases
       name: '@Author::ETHER/PHASE VERIFICATION'
@@ -681,7 +684,7 @@ x_Dist_Zilla:
     class: Dist::Zilla::Dist::Builder
     config:
       is_trial: '0'
-    version: '5.028'
+    version: '5.029'
 x_authority: cpan:SARTAK
 x_authority_from_module: App::Nopaste
 x_contributors:
@@ -693,16 +696,14 @@ x_contributors:
   - 'Justin Hunter <justin.d.hunter@gmail.com>'
   - 'Kevin Falcone <kevin@jibsheet.com>'
   - 'Zoffix Znet <cpan@zoffix.com>'
-  - 'David Golden <dagolden@cpan.org>'
-  - 'Rafael Kitover <rkitover@cpan.org>'
-  - 'Sergey Romanov <complefor@rambler.ru>'
   - 'Jesse Luehrs <doy@tozt.net>'
-  - 'Сергей Романов <sromanov@cpan.org>'
-  - "Arthur Axel 'fREW' Schmidt <frioux@gmail.com>"
+  - 'Sergey Romanov <complefor@rambler.ru>'
+  - 'Dean Hamstead <dean@fragfest.com.au>'
+  - 'Rafael Kitover <rkitover@cpan.org>'
+  - 'David Golden <dagolden@cpan.org>'
   - "יובל קוג'מן (Yuval Kogman) <nothingmuch@woobling.org>"
   - 'Darian Anthony Patrick <dap@darianpatrick.com>'
   - 'David Bremner <bremner@unb.ca>'
-  - 'Dean Hamstead <dean@fragfest.com.au>'
   - 'Graham Knop <haarg@haarg.org>'
   - 'Jason Mills <jmmills@cpan.org>'
   - 'John Goulah <jgoulah@gmail.com>'
@@ -711,4 +712,6 @@ x_contributors:
   - 'gregor herrmann <gregoa@debian.org>'
   - 'vti <viacheslav.t@gmail.com>'
   - 'Ævar Arnfjörð Bjarmason <avarab@gmail.com>'
+  - 'Сергей Романов <sromanov@cpan.org>'
+  - "Arthur Axel 'fREW' Schmidt <frioux@gmail.com>"
 x_permissions_from_module: App::Nopaste

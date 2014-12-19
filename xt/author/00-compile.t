@@ -6,7 +6,7 @@ use warnings;
 
 use Test::More 0.94;
 
-plan tests => 13 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
+plan tests => 14 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
 my @module_files = (
     'App/Nopaste.pm',
@@ -15,6 +15,7 @@ my @module_files = (
     'App/Nopaste/Service/Codepeek.pm',
     'App/Nopaste/Service/Debian.pm',
     'App/Nopaste/Service/Gist.pm',
+    'App/Nopaste/Service/Mojopaste.pm',
     'App/Nopaste/Service/PastebinCom.pm',
     'App/Nopaste/Service/Pastie.pm',
     'App/Nopaste/Service/Shadowcat.pm',

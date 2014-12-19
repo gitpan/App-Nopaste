@@ -13,6 +13,7 @@ my @files = (
     'lib/App/Nopaste/Service/Codepeek.pm',
     'lib/App/Nopaste/Service/Debian.pm',
     'lib/App/Nopaste/Service/Gist.pm',
+    'lib/App/Nopaste/Service/Mojopaste.pm',
     'lib/App/Nopaste/Service/PastebinCom.pm',
     'lib/App/Nopaste/Service/Pastie.pm',
     'lib/App/Nopaste/Service/Shadowcat.pm',

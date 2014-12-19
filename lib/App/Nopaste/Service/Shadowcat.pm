@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Shadowcat;
-{ our $VERSION = '1.001'; }
+{ our $VERSION = '1.002'; }
 use base 'App::Nopaste::Service';
 
 sub available {
@@ -23,6 +23,6 @@ App::Nopaste::Service::Shadowcat - http://paste.scsys.co.uk/
 
 =head1 VERSION
 
-version 1.001
+version 1.002
 
 =cut

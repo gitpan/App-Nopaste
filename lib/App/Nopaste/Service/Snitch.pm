@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Snitch;
-{ our $VERSION = '1.002'; }
+$App::Nopaste::Service::Snitch::VERSION = '1.003';
 use base 'App::Nopaste::Service';
 
 sub available {
@@ -23,6 +23,6 @@ App::Nopaste::Service::Snitch - http://nopaste.snit.ch/
 
 =head1 VERSION
 
-version 1.002
+version 1.003
 
 =cut

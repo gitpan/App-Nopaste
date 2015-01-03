@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::ssh;
-{ our $VERSION = '1.002'; }
+$App::Nopaste::Service::ssh::VERSION = '1.003';
 use base 'App::Nopaste::Service';
 use File::Temp;
 use File::Spec;
@@ -73,7 +73,7 @@ App::Nopaste::Service::ssh - copies files to your server using scp
 
 =head1 VERSION
 
-version 1.002
+version 1.003
 
 =head1 AUTHOR
 

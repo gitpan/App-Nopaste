@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Ubuntu;
-{ our $VERSION = '1.002'; }
+$App::Nopaste::Service::Ubuntu::VERSION = '1.003';
 use base 'App::Nopaste::Service';
 
 my $languages = {
@@ -244,7 +244,7 @@ App::Nopaste::Service::Ubuntu - http://paste.ubuntu.com/
 
 =head1 VERSION
 
-version 1.002
+version 1.003
 
 =head1 AUTHOR
 

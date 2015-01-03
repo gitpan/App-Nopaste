@@ -39,43 +39,43 @@ optional_features:
 provides:
   App::Nopaste:
     file: lib/App/Nopaste.pm
-    version: '1.002'
+    version: '1.003'
   App::Nopaste::Command:
     file: lib/App/Nopaste/Command.pm
-    version: '1.002'
+    version: '1.003'
   App::Nopaste::Service:
     file: lib/App/Nopaste/Service.pm
-    version: '1.002'
+    version: '1.003'
   App::Nopaste::Service::Codepeek:
     file: lib/App/Nopaste/Service/Codepeek.pm
-    version: '1.002'
+    version: '1.003'
   App::Nopaste::Service::Debian:
     file: lib/App/Nopaste/Service/Debian.pm
-    version: '1.002'
+    version: '1.003'
   App::Nopaste::Service::Gist:
     file: lib/App/Nopaste/Service/Gist.pm
-    version: '1.002'
+    version: '1.003'
   App::Nopaste::Service::Mojopaste:
     file: lib/App/Nopaste/Service/Mojopaste.pm
-    version: '1.002'
+    version: '1.003'
   App::Nopaste::Service::PastebinCom:
     file: lib/App/Nopaste/Service/PastebinCom.pm
-    version: '1.002'
+    version: '1.003'
   App::Nopaste::Service::Pastie:
     file: lib/App/Nopaste/Service/Pastie.pm
-    version: '1.002'
+    version: '1.003'
   App::Nopaste::Service::Shadowcat:
     file: lib/App/Nopaste/Service/Shadowcat.pm
-    version: '1.002'
+    version: '1.003'
   App::Nopaste::Service::Snitch:
     file: lib/App/Nopaste/Service/Snitch.pm
-    version: '1.002'
+    version: '1.003'
   App::Nopaste::Service::Ubuntu:
     file: lib/App/Nopaste/Service/Ubuntu.pm
-    version: '1.002'
+    version: '1.003'
   App::Nopaste::Service::ssh:
     file: lib/App/Nopaste/Service/ssh.pm
-    version: '1.002'
+    version: '1.003'
 recommends:
   Browser::Open: '0'
   Clipboard: '0'
@@ -102,7 +102,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=App-Nopaste
   homepage: https://github.com/karenetheridge/App-Nopaste
   repository: https://github.com/karenetheridge/App-Nopaste.git
-version: '1.002'
+version: '1.003'
 x_Dist_Zilla:
   perl:
     version: '5.021006'
@@ -129,7 +129,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/Git::NextVersion'
-      version: '2.028'
+      version: '2.029'
     -
       class: Dist::Zilla::Plugin::PromptIfStale
       config:
@@ -141,7 +141,7 @@ x_Dist_Zilla:
           phase: build
           skip: []
       name: '@Author::ETHER/stale modules, build'
-      version: '0.032'
+      version: '0.033'
     -
       class: Dist::Zilla::Plugin::PromptIfStale
       config:
@@ -152,7 +152,7 @@ x_Dist_Zilla:
           phase: release
           skip: []
       name: '@Author::ETHER/stale modules, release'
-      version: '0.032'
+      version: '0.033'
     -
       class: Dist::Zilla::Plugin::ExecDir
       name: '@Author::ETHER/ExecDir'
@@ -188,7 +188,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/Git::GatherDir'
-      version: '2.028'
+      version: '2.029'
     -
       class: Dist::Zilla::Plugin::MetaYAML
       name: '@Author::ETHER/MetaYAML'
@@ -307,13 +307,16 @@ x_Dist_Zilla:
       name: '@Author::ETHER/Test::Portability'
       version: '2.000005'
     -
+      class: Dist::Zilla::Plugin::Git::Describe
+      config:
+        Dist::Zilla::Plugin::Git::Describe:
+          on_package_line: '1'
+      name: '@Author::ETHER/Git::Describe'
+      version: '0.004'
+    -
       class: Dist::Zilla::Plugin::PkgVersion
       name: '@Author::ETHER/PkgVersion'
       version: '5.029'
-    -
-      class: Dist::Zilla::Plugin::Git::Describe
-      name: '@Author::ETHER/Git::Describe'
-      version: '0.003'
     -
       class: Dist::Zilla::Plugin::NextRelease
       name: '@Author::ETHER/NextRelease'
@@ -361,7 +364,7 @@ x_Dist_Zilla:
           inherit_version: '1'
           meta_noindex: '1'
       name: '@Author::ETHER/MetaProvides::Package'
-      version: '2.001002'
+      version: '2.002000'
     -
       class: Dist::Zilla::Plugin::MetaConfig
       name: '@Author::ETHER/MetaConfig'
@@ -457,7 +460,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/initial check'
-      version: '2.028'
+      version: '2.029'
     -
       class: Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts
       config:
@@ -496,7 +499,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/after tests'
-      version: '2.028'
+      version: '2.029'
     -
       class: Dist::Zilla::Plugin::CheckIssues
       name: '@Author::ETHER/CheckIssues'
@@ -514,7 +517,7 @@ x_Dist_Zilla:
             - CONTRIBUTING
           match: []
       name: '@Author::ETHER/CopyFilesFromRelease'
-      version: '0.003'
+      version: '0.004'
     -
       class: Dist::Zilla::Plugin::Run::AfterRelease
       config:
@@ -527,8 +530,7 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Git::Commit
       config:
         Dist::Zilla::Plugin::Git::Commit:
-          add_files_in:
-            - .
+          add_files_in: []
           commit_msg: '%N-%v%t%n%n%c'
           time_zone: local
         Dist::Zilla::Role::Git::DirtyFiles:
@@ -543,25 +545,25 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/Git::Commit'
-      version: '2.028'
+      version: '2.029'
     -
       class: Dist::Zilla::Plugin::Git::Tag
       config:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: '1.002'
+          tag: '1.003'
           tag_format: '%v%t'
           tag_message: v%v%t
           time_zone: local
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/Git::Tag'
-      version: '2.028'
+      version: '2.029'
     -
       class: Dist::Zilla::Plugin::GitHub::Update
       name: '@Author::ETHER/GitHub::Update'
-      version: '0.38'
+      version: '0.39'
     -
       class: Dist::Zilla::Plugin::Git::Push
       config:
@@ -572,7 +574,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/Git::Push'
-      version: '2.028'
+      version: '2.029'
     -
       class: Dist::Zilla::Plugin::Run::AfterRelease
       config:

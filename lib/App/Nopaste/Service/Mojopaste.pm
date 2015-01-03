@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package App::Nopaste::Service::Mojopaste;
-{ our $VERSION = '1.002'; }
+$App::Nopaste::Service::Mojopaste::VERSION = '1.003';
 use base 'App::Nopaste::Service';
 
 sub uri { $ENV{NOPASTE_MOJOPASTE_WEBPATH} || 'https://ssl.thorsen.pm/paste' }
@@ -51,7 +51,7 @@ App::Nopaste::Service::Mojopaste - A mojopaste instance
 
 =head1 VERSION
 
-version 1.002
+version 1.003
 
 =head1 USAGE
 

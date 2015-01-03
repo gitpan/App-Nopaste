@@ -1,9 +1,7 @@
 use strict;
 use warnings;
-package App::Nopaste;
-# git description: 1.001-2-g3afb180
-
-{ our $VERSION = '1.002'; }
+package App::Nopaste; # git description: 1.002-1-g2c0e995
+$App::Nopaste::VERSION = '1.003';
 use 5.008003;
 use Module::Pluggable search_path => 'App::Nopaste::Service', sub_name => '_plugins';
 use Class::Load 'load_class';
@@ -96,7 +94,7 @@ App::Nopaste - Easy access to any pastebin
 
 =head1 VERSION
 
-version 1.002
+version 1.003
 
 =head1 SYNOPSIS
 
